@@ -23,6 +23,7 @@ namespace WebBrowser.UI
                {
                     MethodOne();
                }
+               // To narrow down type of exception, place a BREAK button on the catch statement
                catch (Exception ex)
                {
                     MessageBox.Show(ex.StackTrace);
