@@ -16,5 +16,32 @@ namespace WebBrowser.UI
           {
                InitializeComponent();
           }
+
+          private void Form1_Load(object sender, EventArgs e)
+          {
+               try
+               {
+                    MethodOne();
+               }
+               catch (Exception ex)
+               {
+                    MessageBox.Show(ex.StackTrace);
+               }
+          }
+
+          private void MethodOne()
+          {
+               methodTwo();
+          }
+
+          private void methodTwo()
+          {
+               methodThree();
+          }
+
+          private void methodThree()
+          {
+               throw new NotImplementedException();
+          }
      }
 }
