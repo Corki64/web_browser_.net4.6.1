@@ -28,6 +28,7 @@
           /// </summary>
           private void InitializeComponent()
           {
+               this.components = new System.ComponentModel.Container();
                this.menuStrip1 = new System.Windows.Forms.MenuStrip();
                this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                this.newTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +52,7 @@
                this.toolStripSpringTextBox1 = new WebBrowser.UI.ToolStripSpringTextBox();
                this.tabPage1 = new System.Windows.Forms.TabPage();
                this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+               this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
                this.menuStrip1.SuspendLayout();
                this.toolStrip1.SuspendLayout();
                this.tabControl1.SuspendLayout();
@@ -65,7 +67,7 @@
             this.helpToolStripMenuItem});
                this.menuStrip1.Location = new System.Drawing.Point(0, 0);
                this.menuStrip1.Name = "menuStrip1";
-               this.menuStrip1.Size = new System.Drawing.Size(810, 24);
+               this.menuStrip1.Size = new System.Drawing.Size(742, 24);
                this.menuStrip1.TabIndex = 0;
                this.menuStrip1.Text = "menuStrip1";
                // 
@@ -160,7 +162,7 @@
             this.toolStripButton6});
                this.toolStrip1.Location = new System.Drawing.Point(0, 24);
                this.toolStrip1.Name = "toolStrip1";
-               this.toolStrip1.Size = new System.Drawing.Size(810, 25);
+               this.toolStrip1.Size = new System.Drawing.Size(742, 25);
                this.toolStrip1.Stretch = true;
                this.toolStrip1.TabIndex = 1;
                this.toolStrip1.Text = "toolStrip1";
@@ -227,7 +229,7 @@
                this.tabControl1.Location = new System.Drawing.Point(0, 49);
                this.tabControl1.Name = "tabControl1";
                this.tabControl1.SelectedIndex = 0;
-               this.tabControl1.Size = new System.Drawing.Size(810, 524);
+               this.tabControl1.Size = new System.Drawing.Size(742, 465);
                this.tabControl1.TabIndex = 2;
                // 
                // toolStripSpringTextBox1
@@ -241,7 +243,7 @@
                this.tabPage1.Location = new System.Drawing.Point(4, 22);
                this.tabPage1.Name = "tabPage1";
                this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-               this.tabPage1.Size = new System.Drawing.Size(802, 498);
+               this.tabPage1.Size = new System.Drawing.Size(734, 439);
                this.tabPage1.TabIndex = 0;
                this.tabPage1.Text = "tabPage1";
                this.tabPage1.UseVisualStyleBackColor = true;
@@ -252,15 +254,20 @@
                this.webBrowser1.Location = new System.Drawing.Point(3, 3);
                this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
                this.webBrowser1.Name = "webBrowser1";
-               this.webBrowser1.Size = new System.Drawing.Size(796, 492);
+               this.webBrowser1.Size = new System.Drawing.Size(728, 433);
                this.webBrowser1.TabIndex = 0;
+               // 
+               // contextMenuStrip1
+               // 
+               this.contextMenuStrip1.Name = "contextMenuStrip1";
+               this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
                // 
                // Form1
                // 
                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
                this.AutoSize = true;
-               this.ClientSize = new System.Drawing.Size(810, 573);
+               this.ClientSize = new System.Drawing.Size(742, 514);
                this.Controls.Add(this.tabControl1);
                this.Controls.Add(this.toolStrip1);
                this.Controls.Add(this.menuStrip1);
@@ -305,6 +312,7 @@
           private ToolStripSpringTextBox toolStripSpringTextBox1;
           private System.Windows.Forms.TabPage tabPage1;
           private System.Windows.Forms.WebBrowser webBrowser1;
+          private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
      }
 }
 
