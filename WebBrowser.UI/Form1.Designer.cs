@@ -65,7 +65,7 @@
             this.helpToolStripMenuItem});
                this.menuStrip1.Location = new System.Drawing.Point(0, 0);
                this.menuStrip1.Name = "menuStrip1";
-               this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+               this.menuStrip1.Size = new System.Drawing.Size(810, 24);
                this.menuStrip1.TabIndex = 0;
                this.menuStrip1.Text = "menuStrip1";
                // 
@@ -160,7 +160,7 @@
             this.toolStripButton6});
                this.toolStrip1.Location = new System.Drawing.Point(0, 24);
                this.toolStrip1.Name = "toolStrip1";
-               this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+               this.toolStrip1.Size = new System.Drawing.Size(810, 25);
                this.toolStrip1.Stretch = true;
                this.toolStrip1.TabIndex = 1;
                this.toolStrip1.Text = "toolStrip1";
@@ -223,10 +223,11 @@
                // tabControl1
                // 
                this.tabControl1.Controls.Add(this.tabPage1);
-               this.tabControl1.Location = new System.Drawing.Point(12, 52);
+               this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+               this.tabControl1.Location = new System.Drawing.Point(0, 49);
                this.tabControl1.Name = "tabControl1";
                this.tabControl1.SelectedIndex = 0;
-               this.tabControl1.Size = new System.Drawing.Size(200, 100);
+               this.tabControl1.Size = new System.Drawing.Size(810, 524);
                this.tabControl1.TabIndex = 2;
                // 
                // toolStripSpringTextBox1
@@ -240,7 +241,7 @@
                this.tabPage1.Location = new System.Drawing.Point(4, 22);
                this.tabPage1.Name = "tabPage1";
                this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-               this.tabPage1.Size = new System.Drawing.Size(192, 74);
+               this.tabPage1.Size = new System.Drawing.Size(802, 498);
                this.tabPage1.TabIndex = 0;
                this.tabPage1.Text = "tabPage1";
                this.tabPage1.UseVisualStyleBackColor = true;
@@ -251,19 +252,21 @@
                this.webBrowser1.Location = new System.Drawing.Point(3, 3);
                this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
                this.webBrowser1.Name = "webBrowser1";
-               this.webBrowser1.Size = new System.Drawing.Size(186, 68);
+               this.webBrowser1.Size = new System.Drawing.Size(796, 492);
                this.webBrowser1.TabIndex = 0;
                // 
                // Form1
                // 
                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-               this.ClientSize = new System.Drawing.Size(800, 450);
+               this.AutoSize = true;
+               this.ClientSize = new System.Drawing.Size(810, 573);
                this.Controls.Add(this.tabControl1);
                this.Controls.Add(this.toolStrip1);
                this.Controls.Add(this.menuStrip1);
                this.MainMenuStrip = this.menuStrip1;
                this.Name = "Form1";
+               this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
                this.Text = "Form1";
                this.Load += new System.EventHandler(this.Form1_Load);
                this.menuStrip1.ResumeLayout(false);
