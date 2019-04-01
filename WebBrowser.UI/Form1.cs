@@ -55,5 +55,10 @@ namespace WebBrowser.UI
                MessageBox.Show(
                     "Welcome to the best browser ever built in this office. It is brought to you by Luis Cortez lac0084. I hope you enjoy your stay.");
           }
+
+          private void toolStripButton1_Click(object sender, EventArgs e)
+          {
+
+          }
      }
 }
