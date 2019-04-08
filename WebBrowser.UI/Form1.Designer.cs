@@ -1,6 +1,6 @@
 ﻿namespace WebBrowser.UI
 {
-     partial class Form1
+     partial class gromBrowser
      {
           /// <summary>
           /// Required designer variable.
@@ -42,14 +42,14 @@
                this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
                this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-               this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-               this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-               this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-               this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-               this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-               this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-               this.tabControl1 = new System.Windows.Forms.TabControl();
+               this.Back = new System.Windows.Forms.ToolStripButton();
+               this.Forward = new System.Windows.Forms.ToolStripButton();
+               this.Refresh = new System.Windows.Forms.ToolStripButton();
                this.toolStripSpringTextBox1 = new WebBrowser.UI.ToolStripSpringTextBox();
+               this.Home = new System.Windows.Forms.ToolStripButton();
+               this.Go = new System.Windows.Forms.ToolStripButton();
+               this.Bookmark = new System.Windows.Forms.ToolStripButton();
+               this.tabControl1 = new System.Windows.Forms.TabControl();
                this.tabPage1 = new System.Windows.Forms.TabPage();
                this.webBrowser1 = new System.Windows.Forms.WebBrowser();
                this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -86,31 +86,31 @@
                // newTabToolStripMenuItem
                // 
                this.newTabToolStripMenuItem.Name = "newTabToolStripMenuItem";
-               this.newTabToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+               this.newTabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
                this.newTabToolStripMenuItem.Text = "New Tab";
                // 
                // closeCurrentTabToolStripMenuItem
                // 
                this.closeCurrentTabToolStripMenuItem.Name = "closeCurrentTabToolStripMenuItem";
-               this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+               this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
                this.closeCurrentTabToolStripMenuItem.Text = "Close Current Tab";
                // 
                // savePageAsHTMLToolStripMenuItem
                // 
                this.savePageAsHTMLToolStripMenuItem.Name = "savePageAsHTMLToolStripMenuItem";
-               this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+               this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
                this.savePageAsHTMLToolStripMenuItem.Text = "Save Page as HTML";
                // 
                // printPageToolStripMenuItem
                // 
                this.printPageToolStripMenuItem.Name = "printPageToolStripMenuItem";
-               this.printPageToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+               this.printPageToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
                this.printPageToolStripMenuItem.Text = "Print Page";
                // 
                // exitWebBrowserToolStripMenuItem
                // 
                this.exitWebBrowserToolStripMenuItem.Name = "exitWebBrowserToolStripMenuItem";
-               this.exitWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+               this.exitWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
                this.exitWebBrowserToolStripMenuItem.Text = "Exit Web Browser";
                this.exitWebBrowserToolStripMenuItem.Click += new System.EventHandler(this.exitWebBrowserToolStripMenuItem_Click);
                // 
@@ -153,13 +153,13 @@
                // toolStrip1
                // 
                this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton2,
-            this.toolStripButton1,
-            this.toolStripButton3,
+            this.Back,
+            this.Forward,
+            this.Refresh,
             this.toolStripSpringTextBox1,
-            this.toolStripButton4,
-            this.toolStripButton5,
-            this.toolStripButton6});
+            this.Home,
+            this.Go,
+            this.Bookmark});
                this.toolStrip1.Location = new System.Drawing.Point(0, 24);
                this.toolStrip1.Name = "toolStrip1";
                this.toolStrip1.Size = new System.Drawing.Size(742, 25);
@@ -167,60 +167,65 @@
                this.toolStrip1.TabIndex = 1;
                this.toolStrip1.Text = "toolStrip1";
                // 
-               // toolStripButton2
+               // Back
                // 
-               this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-               this.toolStripButton2.Image = global::WebBrowser.UI.Properties.Resources.Backward_16x;
-               this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-               this.toolStripButton2.Name = "toolStripButton2";
-               this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-               this.toolStripButton2.Text = "toolStripButton2";
+               this.Back.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+               this.Back.Image = global::WebBrowser.UI.Properties.Resources.Backward_16x;
+               this.Back.ImageTransparentColor = System.Drawing.Color.Magenta;
+               this.Back.Name = "Back";
+               this.Back.Size = new System.Drawing.Size(23, 22);
+               this.Back.Text = "toolStripButton2";
                // 
-               // toolStripButton1
+               // Forward
                // 
-               this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-               this.toolStripButton1.Image = global::WebBrowser.UI.Properties.Resources.Forward_16x;
-               this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-               this.toolStripButton1.Name = "toolStripButton1";
-               this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-               this.toolStripButton1.Text = "toolStripButton1";
-               this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+               this.Forward.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+               this.Forward.Image = global::WebBrowser.UI.Properties.Resources.Forward_16x;
+               this.Forward.ImageTransparentColor = System.Drawing.Color.Magenta;
+               this.Forward.Name = "Forward";
+               this.Forward.Size = new System.Drawing.Size(23, 22);
+               this.Forward.Text = "toolStripButton1";
+               this.Forward.Click += new System.EventHandler(this.toolStripButton1_Click);
                // 
-               // toolStripButton3
+               // Refresh
                // 
-               this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-               this.toolStripButton3.Image = global::WebBrowser.UI.Properties.Resources.Refresh_16x;
-               this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-               this.toolStripButton3.Name = "toolStripButton3";
-               this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-               this.toolStripButton3.Text = "toolStripButton3";
+               this.Refresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+               this.Refresh.Image = global::WebBrowser.UI.Properties.Resources.Refresh_16x;
+               this.Refresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+               this.Refresh.Name = "Refresh";
+               this.Refresh.Size = new System.Drawing.Size(23, 22);
+               this.Refresh.Text = "toolStripButton3";
                // 
-               // toolStripButton4
+               // toolStripSpringTextBox1
                // 
-               this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-               this.toolStripButton4.Image = global::WebBrowser.UI.Properties.Resources.Home_16x;
-               this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-               this.toolStripButton4.Name = "toolStripButton4";
-               this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-               this.toolStripButton4.Text = "toolStripButton4";
+               this.toolStripSpringTextBox1.Name = "toolStripSpringTextBox1";
+               this.toolStripSpringTextBox1.Size = new System.Drawing.Size(561, 25);
                // 
-               // toolStripButton5
+               // Home
                // 
-               this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-               this.toolStripButton5.Image = global::WebBrowser.UI.Properties.Resources.GoToTop_16x;
-               this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-               this.toolStripButton5.Name = "toolStripButton5";
-               this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-               this.toolStripButton5.Text = "toolStripButton5";
+               this.Home.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+               this.Home.Image = global::WebBrowser.UI.Properties.Resources.Home_16x;
+               this.Home.ImageTransparentColor = System.Drawing.Color.Magenta;
+               this.Home.Name = "Home";
+               this.Home.Size = new System.Drawing.Size(23, 22);
+               this.Home.Text = "toolStripButton4";
                // 
-               // toolStripButton6
+               // Go
                // 
-               this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-               this.toolStripButton6.Image = global::WebBrowser.UI.Properties.Resources.Bookmark_16x;
-               this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-               this.toolStripButton6.Name = "toolStripButton6";
-               this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
-               this.toolStripButton6.Text = "toolStripButton6";
+               this.Go.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+               this.Go.Image = global::WebBrowser.UI.Properties.Resources.GoToTop_16x;
+               this.Go.ImageTransparentColor = System.Drawing.Color.Magenta;
+               this.Go.Name = "Go";
+               this.Go.Size = new System.Drawing.Size(23, 22);
+               this.Go.Text = "toolStripButton5";
+               // 
+               // Bookmark
+               // 
+               this.Bookmark.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+               this.Bookmark.Image = global::WebBrowser.UI.Properties.Resources.Bookmark_16x;
+               this.Bookmark.ImageTransparentColor = System.Drawing.Color.Magenta;
+               this.Bookmark.Name = "Bookmark";
+               this.Bookmark.Size = new System.Drawing.Size(23, 22);
+               this.Bookmark.Text = "toolStripButton6";
                // 
                // tabControl1
                // 
@@ -231,11 +236,6 @@
                this.tabControl1.SelectedIndex = 0;
                this.tabControl1.Size = new System.Drawing.Size(742, 465);
                this.tabControl1.TabIndex = 2;
-               // 
-               // toolStripSpringTextBox1
-               // 
-               this.toolStripSpringTextBox1.Name = "toolStripSpringTextBox1";
-               this.toolStripSpringTextBox1.Size = new System.Drawing.Size(619, 25);
                // 
                // tabPage1
                // 
@@ -262,7 +262,7 @@
                this.contextMenuStrip1.Name = "contextMenuStrip1";
                this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
                // 
-               // Form1
+               // gromBrowser
                // 
                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -272,9 +272,9 @@
                this.Controls.Add(this.toolStrip1);
                this.Controls.Add(this.menuStrip1);
                this.MainMenuStrip = this.menuStrip1;
-               this.Name = "Form1";
+               this.Name = "gromBrowser";
                this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-               this.Text = "Form1";
+               this.Text = "Grom Browser";
                this.Load += new System.EventHandler(this.Form1_Load);
                this.menuStrip1.ResumeLayout(false);
                this.menuStrip1.PerformLayout();
@@ -302,12 +302,12 @@
           private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
           private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
           private System.Windows.Forms.ToolStrip toolStrip1;
-          private System.Windows.Forms.ToolStripButton toolStripButton1;
-          private System.Windows.Forms.ToolStripButton toolStripButton2;
-          private System.Windows.Forms.ToolStripButton toolStripButton3;
-          private System.Windows.Forms.ToolStripButton toolStripButton4;
-          private System.Windows.Forms.ToolStripButton toolStripButton5;
-          private System.Windows.Forms.ToolStripButton toolStripButton6;
+          private System.Windows.Forms.ToolStripButton Forward;
+          private System.Windows.Forms.ToolStripButton Back;
+          private System.Windows.Forms.ToolStripButton Refresh;
+          private System.Windows.Forms.ToolStripButton Home;
+          private System.Windows.Forms.ToolStripButton Go;
+          private System.Windows.Forms.ToolStripButton Bookmark;
           private System.Windows.Forms.TabControl tabControl1;
           private ToolStripSpringTextBox toolStripSpringTextBox1;
           private System.Windows.Forms.TabPage tabPage1;
