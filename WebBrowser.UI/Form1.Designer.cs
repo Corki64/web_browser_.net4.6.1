@@ -213,7 +213,6 @@
                this.toolStripSpringTextBox1.Size = new System.Drawing.Size(561, 25);
                this.toolStripSpringTextBox1.Text = "http://";
                this.toolStripSpringTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripSpringTextBox1_KeyPress);
-               this.toolStripSpringTextBox1.Click += new System.EventHandler(this.toolStripSpringTextBox1_Click);
                // 
                // Home
                // 
@@ -296,7 +295,6 @@
                // 
                this.toolStripProgressBar1.Name = "toolStripProgressBar1";
                this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-               this.toolStripProgressBar1.Click += new System.EventHandler(this.toolStripProgressBar1_Click);
                // 
                // toolStripStatusLabel1
                // 
@@ -304,7 +302,6 @@
                this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
                this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
                this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-               this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
                // 
                // gromBrowser
                // 

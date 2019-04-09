@@ -19,31 +19,47 @@ namespace WebBrowser.UI
 
           private void Form1_Load(object sender, EventArgs e)
           {
-               try
-               {
-                    MethodOne();
-               }
-               // To narrow down type of exception, place a BREAK button on the catch statement
-               catch (Exception ex)
-               {
-                    MessageBox.Show(ex.StackTrace);
-               }
+
+
+
+
+
+
+
+
+
+
+
+
+
+               //try
+               //{
+               //     MethodOne();
+               //}
+               //// To narrow down type of exception, place a BREAK button on the catch statement
+               //catch (Exception ex)
+               //{
+               //     MessageBox.Show(ex.StackTrace);
+               //}
           }
 
-          private void MethodOne()
-          {
-               methodTwo();
-          }
+          /**
+           * Test methods follow for try catch tree.
+           */
+          //private void MethodOne()
+          //{
+          //     methodTwo();
+          //}
 
-          private void methodTwo()
-          {
-               methodThree();
-          }
+          //private void methodTwo()
+          //{
+          //     methodThree();
+          //}
 
-          private void methodThree()
-          {
-               throw new NotImplementedException();
-          }
+          //private void methodThree()
+          //{
+          //     throw new NotImplementedException();
+          //}
 
           /**
            * This function called to close the browser.
@@ -114,26 +130,12 @@ namespace WebBrowser.UI
                }
           }
 
-          private void toolStripProgressBar1_Click(object sender, EventArgs e)
-          {
-
-          }
-
-          private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-          {
-
-          }
-
-
           private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
           {
                // Displays complete on status label.
                toolStripStatusLabel1.Text = "Complete";
           }
-
-          private void toolStripSpringTextBox1_Click(object sender, EventArgs e)
-          {
-               toolStripSpringTextBox1.SelectAll();
-          }
      }
+
+
 }
