@@ -45,6 +45,9 @@ namespace WebBrowser.UI
                throw new NotImplementedException();
           }
 
+          /**
+           * This function called to close the browser.
+           */
           private void exitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
           {
                this.Close();
@@ -53,12 +56,17 @@ namespace WebBrowser.UI
           private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
           {
                MessageBox.Show(
-                    "Welcome to the best browser ever built in this office. It is brought to you by Luis Cortez lac0084. I hope you enjoy your stay.");
+                    "Welcome to the best browser ever built in this office. It is brought to you by Luis Cortez (lac0084). I hope you enjoy your stay.");
           }
 
           private void toolStripButton1_Click(object sender, EventArgs e)
           {
 
+          }
+
+          private void Go_Click(object sender, EventArgs e)
+          {
+               webBrowser1.Navigate(toolStripSpringTextBox1.Text);
           }
      }
 }
