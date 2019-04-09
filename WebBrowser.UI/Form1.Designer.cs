@@ -213,6 +213,7 @@
                this.toolStripSpringTextBox1.Size = new System.Drawing.Size(561, 25);
                this.toolStripSpringTextBox1.Text = "http://";
                this.toolStripSpringTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripSpringTextBox1_KeyPress);
+               this.toolStripSpringTextBox1.Click += new System.EventHandler(this.toolStripSpringTextBox1_Click);
                // 
                // Home
                // 

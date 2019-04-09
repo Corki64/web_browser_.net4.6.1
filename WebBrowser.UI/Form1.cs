@@ -83,7 +83,6 @@ namespace WebBrowser.UI
                {
                     NavigateToPage();
                }
-
           }
 
           private void Go_Click(object sender, EventArgs e)
@@ -125,10 +124,16 @@ namespace WebBrowser.UI
 
           }
 
+
           private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
           {
                // Displays complete on status label.
                toolStripStatusLabel1.Text = "Complete";
+          }
+
+          private void toolStripSpringTextBox1_Click(object sender, EventArgs e)
+          {
+               toolStripSpringTextBox1.SelectAll();
           }
      }
 }
