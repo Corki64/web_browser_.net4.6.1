@@ -49,7 +49,7 @@
                this.Home = new System.Windows.Forms.ToolStripButton();
                this.Go = new System.Windows.Forms.ToolStripButton();
                this.Bookmark = new System.Windows.Forms.ToolStripButton();
-               this.tabControl1 = new System.Windows.Forms.TabControl();
+               this.windowTabs = new System.Windows.Forms.TabControl();
                this.tabPage1 = new System.Windows.Forms.TabPage();
                this.webBrowser1 = new System.Windows.Forms.WebBrowser();
                this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -58,7 +58,7 @@
                this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
                this.menuStrip1.SuspendLayout();
                this.toolStrip1.SuspendLayout();
-               this.tabControl1.SuspendLayout();
+               this.windowTabs.SuspendLayout();
                this.tabPage1.SuspendLayout();
                this.statusStrip1.SuspendLayout();
                this.SuspendLayout();
@@ -234,15 +234,16 @@
                this.Bookmark.Size = new System.Drawing.Size(23, 22);
                this.Bookmark.Text = "toolStripButton6";
                // 
-               // tabControl1
+               // windowTabs
                // 
-               this.tabControl1.Controls.Add(this.tabPage1);
-               this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-               this.tabControl1.Location = new System.Drawing.Point(0, 49);
-               this.tabControl1.Name = "tabControl1";
-               this.tabControl1.SelectedIndex = 0;
-               this.tabControl1.Size = new System.Drawing.Size(742, 465);
-               this.tabControl1.TabIndex = 2;
+               this.windowTabs.Controls.Add(this.tabPage1);
+               this.windowTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+               this.windowTabs.Location = new System.Drawing.Point(0, 49);
+               this.windowTabs.Name = "windowTabs";
+               this.windowTabs.SelectedIndex = 0;
+               this.windowTabs.Size = new System.Drawing.Size(742, 465);
+               this.windowTabs.TabIndex = 2;
+               this.windowTabs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.windowTabs_KeyDown);
                // 
                // tabPage1
                // 
@@ -298,9 +299,10 @@
                this.AutoSize = true;
                this.ClientSize = new System.Drawing.Size(742, 514);
                this.Controls.Add(this.statusStrip1);
-               this.Controls.Add(this.tabControl1);
+               this.Controls.Add(this.windowTabs);
                this.Controls.Add(this.toolStrip1);
                this.Controls.Add(this.menuStrip1);
+               this.KeyPreview = true;
                this.MainMenuStrip = this.menuStrip1;
                this.Name = "gromBrowser";
                this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -310,7 +312,7 @@
                this.menuStrip1.PerformLayout();
                this.toolStrip1.ResumeLayout(false);
                this.toolStrip1.PerformLayout();
-               this.tabControl1.ResumeLayout(false);
+               this.windowTabs.ResumeLayout(false);
                this.tabPage1.ResumeLayout(false);
                this.statusStrip1.ResumeLayout(false);
                this.statusStrip1.PerformLayout();
@@ -340,7 +342,7 @@
           private System.Windows.Forms.ToolStripButton Home;
           private System.Windows.Forms.ToolStripButton Go;
           private System.Windows.Forms.ToolStripButton Bookmark;
-          private System.Windows.Forms.TabControl tabControl1;
+          private System.Windows.Forms.TabControl windowTabs;
           private ToolStripSpringTextBox toolStripSpringTextBox1;
           private System.Windows.Forms.TabPage tabPage1;
           private System.Windows.Forms.WebBrowser webBrowser1;

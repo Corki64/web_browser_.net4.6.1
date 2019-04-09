@@ -88,5 +88,18 @@ namespace WebBrowser.UI
           {
                NavigateToPage();
           }
+
+          private void windowTabs_KeyDown(object sender, KeyEventArgs e)
+          {
+               if (e.Control && (e.KeyCode == Keys.T))
+               {
+                    this.windowTabs.TabPages.Add(new TabPage("New Tab"));
+               }
+
+               if (e.Control && (e.KeyCode == Keys.W))
+               {
+                    this.windowTabs.TabPages.RemoveAt(this.windowTabs.SelectedIndex);
+               }
+          }
      }
 }
