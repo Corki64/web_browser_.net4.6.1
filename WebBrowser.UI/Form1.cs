@@ -101,5 +101,16 @@ namespace WebBrowser.UI
                     this.windowTabs.TabPages.RemoveAt(this.windowTabs.SelectedIndex);
                }
           }
+
+          private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+          {
+               /**
+                * This if statement will take care of a divide by zero error.
+                */
+               if (e.CurrentProgress > 0 && e.MaximumProgress > 0)
+               {
+                    toolStripProgressBar1.ProgressBar.Value = (int)(e.CurrentProgress * 100 / e.MaximumProgress);
+               }
+          }
      }
 }
