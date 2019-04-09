@@ -272,6 +272,7 @@
                this.webBrowser1.Name = "webBrowser1";
                this.webBrowser1.Size = new System.Drawing.Size(728, 433);
                this.webBrowser1.TabIndex = 0;
+               this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
                this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser1_ProgressChanged);
                // 
                // contextMenuStrip1
@@ -294,12 +295,15 @@
                // 
                this.toolStripProgressBar1.Name = "toolStripProgressBar1";
                this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+               this.toolStripProgressBar1.Click += new System.EventHandler(this.toolStripProgressBar1_Click);
                // 
                // toolStripStatusLabel1
                // 
+               this.toolStripStatusLabel1.AutoToolTip = true;
                this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
                this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
                this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+               this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
                // 
                // gromBrowser
                // 

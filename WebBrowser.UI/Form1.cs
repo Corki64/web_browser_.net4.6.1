@@ -69,6 +69,8 @@ namespace WebBrowser.UI
            */
           private void NavigateToPage()
           {
+               // Displays loading on status label.
+               toolStripStatusLabel1.Text = "Page Loading";
                webBrowser1.Navigate(toolStripSpringTextBox1.Text);
           }
 
@@ -111,6 +113,22 @@ namespace WebBrowser.UI
                {
                     toolStripProgressBar1.ProgressBar.Value = (int)(e.CurrentProgress * 100 / e.MaximumProgress);
                }
+          }
+
+          private void toolStripProgressBar1_Click(object sender, EventArgs e)
+          {
+
+          }
+
+          private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+          {
+
+          }
+
+          private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+          {
+               // Displays complete on status label.
+               toolStripStatusLabel1.Text = "Complete";
           }
      }
 }
