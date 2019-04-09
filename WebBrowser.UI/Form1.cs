@@ -64,9 +64,29 @@ namespace WebBrowser.UI
 
           }
 
-          private void Go_Click(object sender, EventArgs e)
+          /**
+           * Navigation function
+           */
+          private void NavigateToPage()
           {
                webBrowser1.Navigate(toolStripSpringTextBox1.Text);
+          }
+
+          /**
+           * This function will allow us to hit enter from the address text box and go to web page entered.
+           */
+          private void toolStripSpringTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+          {
+               if (e.KeyChar == (char)ConsoleKey.Enter)
+               {
+                    NavigateToPage();
+               }
+
+          }
+
+          private void Go_Click(object sender, EventArgs e)
+          {
+               NavigateToPage();
           }
      }
 }
