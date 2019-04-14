@@ -114,6 +114,7 @@
                this.printPageToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
                this.printPageToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.printPageToolStripMenuItem.Text = "Print Page";
+               this.printPageToolStripMenuItem.Click += new System.EventHandler(this.printPageToolStripMenuItem_Click);
                // 
                // exitWebBrowserToolStripMenuItem
                // 

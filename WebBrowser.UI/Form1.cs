@@ -135,6 +135,11 @@ namespace WebBrowser.UI
                // Displays complete on status label.
                toolStripStatusLabel1.Text = "Complete";
           }
+
+          private void printPageToolStripMenuItem_Click(object sender, EventArgs e)
+          {
+               webBrowser1.ShowPrintPreviewDialog();
+          }
      }
 
 
