@@ -9,10 +9,14 @@ namespace WebBrowser.Logic
     public class HistoryItem
     {
           public int Id { get; set; }
-          public String Url { get; set; }
-          public String Title { get; set; }
+          public string Url { get; set; }
+          public string Title { get; set; }
           public DateTime Date { get; set; }
      }
 
-    
+    public class BookmarkItem
+    {
+          public string Url { get; set; }
+          public string Title { get; set; }
+    }
 }
