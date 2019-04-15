@@ -111,29 +111,28 @@ namespace WebBrowser.UI
                }
           }
 
-          private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+
+          private void manageHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+          {
+               var historyForm = new HistoryManagerForm();
+               historyForm.ShowDialog();
+          }
+
+          public void manageBookmarksToolStripMenuItem_Click(object sender, EventArgs e)
+          {
+               var bookmarkForm = new BookmarkManagerForm();
+               bookmarkForm.ShowDialog();
+          }
+
+          private void newTabToolStripMenuItem_Click_1(object sender, EventArgs e)
           {
                windowTabs.Controls.Add(new BrowserTab());
           }
 
-          private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+          private void closeCurrentTabToolStripMenuItem_Click_1(object sender, EventArgs e)
           {
                windowTabs.TabPages.Remove(windowTabs.SelectedTab);
           }
-
-
-
-          //private void manageHistoryToolStripMenuItem_Click(object sender, EventArgs e)
-          //{
-          //     var historyForm = new HistoryManagerForm();
-          //     historyForm.ShowDialog();
-          //}
-
-          //public void manageBookmarksToolStripMenuItem_Click(object sender, EventArgs e)
-          //{
-          //     var bookmarkForm = new BookmarkManagerForm();
-          //     bookmarkForm.ShowDialog();
-          //}
      }
 
 
