@@ -20,47 +20,8 @@ namespace WebBrowser.UI
 
           private void Form1_Load(object sender, EventArgs e)
           {
-
-
-
-
-
-
-
-
-
-
-
-
-
-               //try
-               //{
-               //     MethodOne();
-               //}
-               //// To narrow down type of exception, place a BREAK button on the catch statement
-               //catch (Exception ex)
-               //{
-               //     MessageBox.Show(ex.StackTrace);
-               //}
+               windowTabs.Controls.Add(new BrowserTab());
           }
-
-          /**
-           * Test methods follow for try catch tree.
-           */
-          //private void MethodOne()
-          //{
-          //     methodTwo();
-          //}
-
-          //private void methodTwo()
-          //{
-          //     methodThree();
-          //}
-
-          //private void methodThree()
-          //{
-          //     throw new NotImplementedException();
-          //}
 
           /**
            * This function called to close the browser.
@@ -88,7 +49,7 @@ namespace WebBrowser.UI
           {
                // Displays loading on status label.
                toolStripStatusLabel1.Text = "Page Loading";
-               webBrowser1.Navigate(toolStripSpringTextBox1.Text);
+               //windowTabs.Navigate(toolStripSpringTextBox1.Text);
           }
 
           /**
@@ -132,15 +93,22 @@ namespace WebBrowser.UI
 
           private void printPageToolStripMenuItem_Click(object sender, EventArgs e)
           {
-               webBrowser1.ShowPrintPreviewDialog();
+               //webBrowser1.ShowPrintPreviewDialog();
           }
 
+          /**
+           * New tabStyle found: reference
+           * https://social.msdn.microsoft.com/Forums/vstudio/en-US/785637ac-a920-4592-974c-bf9b7ac03b7f/creating-a-multi-tabbed-browser-using-webbrowser-control-in-c?forum=csharpgeneral
+           */
           public class BrowserTab : TabPage
           {
+               private TabPage tp = new TabPage();
                System.Windows.Forms.WebBrowser wb = new System.Windows.Forms.WebBrowser();
 
                public BrowserTab()
                {
+                    wb.Dock = DockStyle.Fill;
+                    wb.Navigate("www.google.com");
                     this.Controls.Add(wb);
                }
           }
@@ -148,6 +116,11 @@ namespace WebBrowser.UI
           private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
           {
                windowTabs.Controls.Add(new BrowserTab());
+          }
+
+          private void windowTabs_SelectedIndexChanged(object sender, EventArgs e)
+          {
+
           }
      }
 
