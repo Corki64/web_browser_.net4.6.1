@@ -33,10 +33,11 @@
                // 
                // bookmarkItemListBox
                // 
+               this.bookmarkItemListBox.Dock = System.Windows.Forms.DockStyle.Fill;
                this.bookmarkItemListBox.FormattingEnabled = true;
                this.bookmarkItemListBox.Location = new System.Drawing.Point(0, 0);
                this.bookmarkItemListBox.Name = "bookmarkItemListBox";
-               this.bookmarkItemListBox.Size = new System.Drawing.Size(120, 95);
+               this.bookmarkItemListBox.Size = new System.Drawing.Size(800, 450);
                this.bookmarkItemListBox.TabIndex = 0;
                // 
                // BookmarkManagerForm

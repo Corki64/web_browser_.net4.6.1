@@ -6,17 +6,16 @@ namespace WebBrowser.Logic
 {
      public class BookmarkManager
      {
+          public static BookmarksTableAdapter Adapter = new BookmarksTableAdapter();
           public static void Add(BookmarkItem itemIn)
           {
-               var adapter = new BookmarksTableAdapter();
-               adapter.Insert(itemIn.Url, itemIn.Title, itemIn.Id);
+               Adapter.Insert(itemIn.Url, itemIn.Title, itemIn.Id);
           }
 
           public static List<BookmarkItem> GetBookmarkItems()
           {
-               var adapter = new BookmarksTableAdapter();
                var results = new List<BookmarkItem>();
-               var rows = adapter.GetData();
+               var rows = Adapter.GetData();
 
                foreach (var row in rows)
                {

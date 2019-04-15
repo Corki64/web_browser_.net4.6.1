@@ -93,6 +93,7 @@
                this.newTabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
                this.newTabToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.newTabToolStripMenuItem.Text = "New Tab";
+               this.newTabToolStripMenuItem.Click += new System.EventHandler(this.newTabToolStripMenuItem_Click_1);
                // 
                // closeCurrentTabToolStripMenuItem
                // 
@@ -100,6 +101,7 @@
                this.closeCurrentTabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
                this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.closeCurrentTabToolStripMenuItem.Text = "Close Current Tab";
+               this.closeCurrentTabToolStripMenuItem.Click += new System.EventHandler(this.closeCurrentTabToolStripMenuItem_Click_1);
                // 
                // savePageAsHTMLToolStripMenuItem
                // 
@@ -139,6 +141,7 @@
                this.manageHistoryToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
                this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
                this.manageHistoryToolStripMenuItem.Text = "Manage History";
+               this.manageHistoryToolStripMenuItem.Click += new System.EventHandler(this.manageHistoryToolStripMenuItem_Click);
                // 
                // manageBookmarksToolStripMenuItem
                // 
@@ -146,6 +149,7 @@
                this.manageBookmarksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
                this.manageBookmarksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
                this.manageBookmarksToolStripMenuItem.Text = "Manage Bookmarks";
+               this.manageBookmarksToolStripMenuItem.Click += new System.EventHandler(this.manageBookmarksToolStripMenuItem_Click);
                // 
                // helpToolStripMenuItem
                // 
@@ -304,7 +308,7 @@
                this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
                this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
                // 
-               // gromBrowser
+               // GromBrowser
                // 
                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,7 +320,7 @@
                this.Controls.Add(this.menuStrip1);
                this.KeyPreview = true;
                this.MainMenuStrip = this.menuStrip1;
-               this.Name = "gromBrowser";
+               this.Name = "GromBrowser";
                this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
                this.Text = "Grom Browser";
                this.Load += new System.EventHandler(this.Form1_Load);

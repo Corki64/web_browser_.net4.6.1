@@ -33,13 +33,11 @@
                // 
                // historyListBox
                // 
-               this.historyListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+               this.historyListBox.Dock = System.Windows.Forms.DockStyle.Fill;
                this.historyListBox.FormattingEnabled = true;
                this.historyListBox.Location = new System.Drawing.Point(0, 0);
                this.historyListBox.Name = "historyListBox";
-               this.historyListBox.Size = new System.Drawing.Size(120, 95);
+               this.historyListBox.Size = new System.Drawing.Size(800, 450);
                this.historyListBox.TabIndex = 0;
                // 
                // HistoryManagerForm
