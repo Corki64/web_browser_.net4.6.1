@@ -7,13 +7,13 @@ namespace WebBrowser.Logic
      public class HistoryManager
      {
 
-          public static void Add(HistoryItem itemIn)
+          public static void AddHistoryItem(HistoryItem itemIn)
           {
                var adapter = new HistoryTableAdapter();
                adapter.Insert(itemIn.Url, itemIn.Title, itemIn.Date);
           }
 
-          public static List<HistoryItem> GetItems()
+          public static List<HistoryItem> GetHistoryItems()
           {
                var adapter = new HistoryTableAdapter();
                var results = new List<HistoryItem>();
