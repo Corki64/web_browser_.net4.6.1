@@ -50,12 +50,16 @@
                this.Go = new System.Windows.Forms.ToolStripButton();
                this.Bookmark = new System.Windows.Forms.ToolStripButton();
                this.windowTabs = new System.Windows.Forms.TabControl();
+               this.tabPage1 = new System.Windows.Forms.TabPage();
+               this.webBrowser1 = new System.Windows.Forms.WebBrowser();
                this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
                this.statusStrip1 = new System.Windows.Forms.StatusStrip();
                this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
                this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
                this.menuStrip1.SuspendLayout();
                this.toolStrip1.SuspendLayout();
+               this.windowTabs.SuspendLayout();
+               this.tabPage1.SuspendLayout();
                this.statusStrip1.SuspendLayout();
                this.SuspendLayout();
                // 
@@ -89,7 +93,6 @@
                this.newTabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
                this.newTabToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.newTabToolStripMenuItem.Text = "New Tab";
-               this.newTabToolStripMenuItem.Click += new System.EventHandler(this.newTabToolStripMenuItem_Click);
                // 
                // closeCurrentTabToolStripMenuItem
                // 
@@ -97,7 +100,6 @@
                this.closeCurrentTabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
                this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.closeCurrentTabToolStripMenuItem.Text = "Close Current Tab";
-               this.closeCurrentTabToolStripMenuItem.Click += new System.EventHandler(this.closeCurrentTabToolStripMenuItem_Click);
                // 
                // savePageAsHTMLToolStripMenuItem
                // 
@@ -243,14 +245,36 @@
                // 
                // windowTabs
                // 
+               this.windowTabs.Controls.Add(this.tabPage1);
                this.windowTabs.Dock = System.Windows.Forms.DockStyle.Fill;
                this.windowTabs.Location = new System.Drawing.Point(0, 49);
                this.windowTabs.Name = "windowTabs";
                this.windowTabs.SelectedIndex = 0;
                this.windowTabs.Size = new System.Drawing.Size(742, 465);
                this.windowTabs.TabIndex = 2;
-               this.windowTabs.SelectedIndexChanged += new System.EventHandler(this.windowTabs_SelectedIndexChanged);
                this.windowTabs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.windowTabs_KeyDown);
+               // 
+               // tabPage1
+               // 
+               this.tabPage1.Controls.Add(this.webBrowser1);
+               this.tabPage1.Location = new System.Drawing.Point(4, 22);
+               this.tabPage1.Name = "tabPage1";
+               this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+               this.tabPage1.Size = new System.Drawing.Size(734, 439);
+               this.tabPage1.TabIndex = 0;
+               this.tabPage1.Text = "tabPage1";
+               this.tabPage1.UseVisualStyleBackColor = true;
+               // 
+               // webBrowser1
+               // 
+               this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
+               this.webBrowser1.Location = new System.Drawing.Point(3, 3);
+               this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+               this.webBrowser1.Name = "webBrowser1";
+               this.webBrowser1.Size = new System.Drawing.Size(728, 433);
+               this.webBrowser1.TabIndex = 0;
+               this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
+               this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser1_ProgressChanged);
                // 
                // contextMenuStrip1
                // 
@@ -280,7 +304,7 @@
                this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
                this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
                // 
-               // GromBrowser
+               // gromBrowser
                // 
                this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -292,7 +316,7 @@
                this.Controls.Add(this.menuStrip1);
                this.KeyPreview = true;
                this.MainMenuStrip = this.menuStrip1;
-               this.Name = "GromBrowser";
+               this.Name = "gromBrowser";
                this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
                this.Text = "Grom Browser";
                this.Load += new System.EventHandler(this.Form1_Load);
@@ -300,6 +324,8 @@
                this.menuStrip1.PerformLayout();
                this.toolStrip1.ResumeLayout(false);
                this.toolStrip1.PerformLayout();
+               this.windowTabs.ResumeLayout(false);
+               this.tabPage1.ResumeLayout(false);
                this.statusStrip1.ResumeLayout(false);
                this.statusStrip1.PerformLayout();
                this.ResumeLayout(false);
@@ -330,6 +356,8 @@
           private System.Windows.Forms.ToolStripButton Bookmark;
           private System.Windows.Forms.TabControl windowTabs;
           private ToolStripSpringTextBox toolStripSpringTextBox1;
+          private System.Windows.Forms.TabPage tabPage1;
+          private System.Windows.Forms.WebBrowser webBrowser1;
           private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
           private System.Windows.Forms.StatusStrip statusStrip1;
           private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;

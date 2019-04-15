@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WebBrowser = System.Windows.Forms.WebBrowser;
 
 namespace WebBrowser.UI
 {
@@ -34,7 +33,7 @@ namespace WebBrowser.UI
           private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
           {
                MessageBox.Show(
-                    "Welcome to the best browser ever built in this office. It is brought to you by Luis Cortez (lac0084). I hope you enjoy your stay.");
+                    "Welcome to the best browser ever built in this office. It is brought to you by Luis Cortez (lac0084@auburn.edu). I hope you enjoy your stay.");
           }
 
           private void toolStripButton1_Click(object sender, EventArgs e)
@@ -104,13 +103,11 @@ namespace WebBrowser.UI
           {
                private TabPage tp = new TabPage();
                System.Windows.Forms.WebBrowser wb = new System.Windows.Forms.WebBrowser();
-
                public BrowserTab()
                {
                     wb.Dock = DockStyle.Fill;
                     wb.Navigate("www.google.com");
                     this.Controls.Add(wb);
-
                }
           }
 
@@ -119,16 +116,24 @@ namespace WebBrowser.UI
                windowTabs.Controls.Add(new BrowserTab());
           }
 
-          private void windowTabs_SelectedIndexChanged(object sender, EventArgs e)
-          {
-
-          }
-
           private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
           {
                windowTabs.TabPages.Remove(windowTabs.SelectedTab);
           }
 
+
+
+          //private void manageHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+          //{
+          //     var historyForm = new HistoryManagerForm();
+          //     historyForm.ShowDialog();
+          //}
+
+          //public void manageBookmarksToolStripMenuItem_Click(object sender, EventArgs e)
+          //{
+          //     var bookmarkForm = new BookmarkManagerForm();
+          //     bookmarkForm.ShowDialog();
+          //}
      }
 
 
