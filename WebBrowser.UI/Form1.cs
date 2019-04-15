@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser = System.Windows.Forms.WebBrowser;
 
 namespace WebBrowser.UI
 {
-     public partial class gromBrowser : Form
+     public partial class GromBrowser : Form
      {
-          public gromBrowser()
+          public GromBrowser()
           {
                InitializeComponent();
           }
@@ -108,15 +109,7 @@ namespace WebBrowser.UI
 
           private void windowTabs_KeyDown(object sender, KeyEventArgs e)
           {
-               if (e.Control && (e.KeyCode == Keys.T))
-               {
-                    this.windowTabs.TabPages.Add(new TabPage("New Tab"));
-               }
-
-               if (e.Control && (e.KeyCode == Keys.W))
-               {
-                    this.windowTabs.TabPages.RemoveAt(this.windowTabs.SelectedIndex);
-               }
+               
           }
 
           private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
@@ -126,19 +119,35 @@ namespace WebBrowser.UI
                 */
                if (e.CurrentProgress > 0 && e.MaximumProgress > 0)
                {
-                    toolStripProgressBar1.ProgressBar.Value = (int)(e.CurrentProgress * 100 / e.MaximumProgress);
+                    if (toolStripProgressBar1.ProgressBar != null)
+                         toolStripProgressBar1.ProgressBar.Value = (int) (e.CurrentProgress * 100 / e.MaximumProgress);
                }
           }
 
           private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
           {
                // Displays complete on status label.
-               toolStripStatusLabel1.Text = "Complete";
+               toolStripStatusLabel1.Text = @"Complete";
           }
 
           private void printPageToolStripMenuItem_Click(object sender, EventArgs e)
           {
                webBrowser1.ShowPrintPreviewDialog();
+          }
+
+          public class BrowserTab : TabPage
+          {
+               System.Windows.Forms.WebBrowser wb = new System.Windows.Forms.WebBrowser();
+
+               public BrowserTab()
+               {
+                    this.Controls.Add(wb);
+               }
+          }
+
+          private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+          {
+               windowTabs.Controls.Add(new BrowserTab());
           }
      }
 
