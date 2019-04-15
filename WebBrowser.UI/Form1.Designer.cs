@@ -97,6 +97,7 @@
                this.closeCurrentTabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
                this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.closeCurrentTabToolStripMenuItem.Text = "Close Current Tab";
+               this.closeCurrentTabToolStripMenuItem.Click += new System.EventHandler(this.closeCurrentTabToolStripMenuItem_Click);
                // 
                // savePageAsHTMLToolStripMenuItem
                // 

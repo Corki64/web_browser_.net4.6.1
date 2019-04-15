@@ -110,6 +110,7 @@ namespace WebBrowser.UI
                     wb.Dock = DockStyle.Fill;
                     wb.Navigate("www.google.com");
                     this.Controls.Add(wb);
+
                }
           }
 
@@ -121,6 +122,11 @@ namespace WebBrowser.UI
           private void windowTabs_SelectedIndexChanged(object sender, EventArgs e)
           {
 
+          }
+
+          private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+          {
+               windowTabs.TabPages.Remove(windowTabs.SelectedTab);
           }
      }
 
