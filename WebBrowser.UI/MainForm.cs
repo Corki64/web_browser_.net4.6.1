@@ -128,6 +128,7 @@ namespace WebBrowser.UI
           {
                windowTabs.TabPages.Remove(windowTabs.SelectedTab);
           }
+
      }
 
 
