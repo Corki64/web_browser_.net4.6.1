@@ -71,7 +71,7 @@ namespace WebBrowser.UI
 
 
           // Will come back to this progress bar : once navigation restored
-          private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+          private void WebBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
           {
                /**
                 * This if statement will take care of a divide by zero error.
@@ -84,7 +84,7 @@ namespace WebBrowser.UI
           }
 
           //Once i can get a valid name for webBrowser instance than I can turn this on
-          private void printPageToolStripMenuItem_Click(object sender, EventArgs e)
+          private void PrintPageToolStripMenuItem_Click(object sender, EventArgs e)
           {
                //webBrowser1.ShowPrintPreviewDialog();
           }

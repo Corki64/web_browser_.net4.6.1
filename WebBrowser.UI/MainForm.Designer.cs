@@ -114,7 +114,7 @@
                this.printPageToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
                this.printPageToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.printPageToolStripMenuItem.Text = "Print Page";
-               this.printPageToolStripMenuItem.Click += new System.EventHandler(this.printPageToolStripMenuItem_Click);
+               this.printPageToolStripMenuItem.Click += new System.EventHandler(this.PrintPageToolStripMenuItem_Click);
                // 
                // exitWebBrowserToolStripMenuItem
                // 
@@ -273,7 +273,7 @@
                this.webBrowser1.Name = "webBrowser1";
                this.webBrowser1.Size = new System.Drawing.Size(728, 433);
                this.webBrowser1.TabIndex = 0;
-               this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser1_ProgressChanged);
+               this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.WebBrowser1_ProgressChanged);
                // 
                // contextMenuStrip1
                // 
