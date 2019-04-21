@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using WebBrowser.Data;
 using WebBrowser.Data.BrowserDBDataSetTableAdapters;
 
 namespace WebBrowser.Logic
@@ -15,12 +16,12 @@ namespace WebBrowser.Logic
 
           public static List<HistoryItem> GetHistoryItems()
           {
-               var results = new List<HistoryItem>();
-               var rows = Adapter.GetData();
+               List<HistoryItem> results = new List<HistoryItem>();
+               BrowserDBDataSet.HistoryDataTable rows = Adapter.GetData();
 
-               foreach (var row in rows)
+               foreach (BrowserDBDataSet.HistoryRow row in rows)
                {
-                    var item = new HistoryItem {Id = row.Id, Url = row.URL, Title = row.Title, Date = row.Date};
+                    HistoryItem item = new HistoryItem {Id = row.Id, Url = row.URL, Title = row.Title, Date = row.Date};
                     results.Add(item);
                }
 

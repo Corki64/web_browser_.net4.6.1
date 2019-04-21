@@ -93,7 +93,6 @@
                this.newTabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
                this.newTabToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.newTabToolStripMenuItem.Text = "New Tab";
-               this.newTabToolStripMenuItem.Click += new System.EventHandler(this.newTabToolStripMenuItem_Click_1);
                // 
                // closeCurrentTabToolStripMenuItem
                // 
@@ -101,7 +100,6 @@
                this.closeCurrentTabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
                this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.closeCurrentTabToolStripMenuItem.Text = "Close Current Tab";
-               this.closeCurrentTabToolStripMenuItem.Click += new System.EventHandler(this.closeCurrentTabToolStripMenuItem_Click_1);
                // 
                // savePageAsHTMLToolStripMenuItem
                // 
@@ -124,7 +122,7 @@
                this.exitWebBrowserToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
                this.exitWebBrowserToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.exitWebBrowserToolStripMenuItem.Text = "Exit Web Browser";
-               this.exitWebBrowserToolStripMenuItem.Click += new System.EventHandler(this.exitWebBrowserToolStripMenuItem_Click);
+               this.exitWebBrowserToolStripMenuItem.Click += new System.EventHandler(this.ExitWebBrowserToolStripMenuItem_Click);
                // 
                // toolsToolStripMenuItem
                // 
@@ -141,7 +139,7 @@
                this.manageHistoryToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
                this.manageHistoryToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
                this.manageHistoryToolStripMenuItem.Text = "Manage History";
-               this.manageHistoryToolStripMenuItem.Click += new System.EventHandler(this.manageHistoryToolStripMenuItem_Click);
+               this.manageHistoryToolStripMenuItem.Click += new System.EventHandler(this.ManageHistoryToolStripMenuItem_Click);
                // 
                // manageBookmarksToolStripMenuItem
                // 
@@ -149,7 +147,7 @@
                this.manageBookmarksToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
                this.manageBookmarksToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
                this.manageBookmarksToolStripMenuItem.Text = "Manage Bookmarks";
-               this.manageBookmarksToolStripMenuItem.Click += new System.EventHandler(this.manageBookmarksToolStripMenuItem_Click);
+               this.manageBookmarksToolStripMenuItem.Click += new System.EventHandler(this.ManageBookmarksToolStripMenuItem_Click);
                // 
                // helpToolStripMenuItem
                // 
@@ -165,7 +163,7 @@
                this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
                this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
                this.aboutToolStripMenuItem.Text = "About";
-               this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+               this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
                // 
                // toolStrip1
                // 
@@ -201,7 +199,6 @@
                this.Forward.Name = "Forward";
                this.Forward.Size = new System.Drawing.Size(23, 22);
                this.Forward.Text = "toolStripButton1";
-               this.Forward.Click += new System.EventHandler(this.toolStripButton1_Click);
                // 
                // BrowserRefresh
                // 
@@ -217,7 +214,7 @@
                this.urlTextBox.Name = "urlTextBox";
                this.urlTextBox.Size = new System.Drawing.Size(561, 25);
                this.urlTextBox.Text = "http://";
-               this.urlTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripSpringTextBox1_KeyPress);
+               this.urlTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ToolStripSpringTextBox1_KeyPress);
                // 
                // Home
                // 
@@ -256,7 +253,6 @@
                this.windowTabs.SelectedIndex = 0;
                this.windowTabs.Size = new System.Drawing.Size(742, 465);
                this.windowTabs.TabIndex = 2;
-               this.windowTabs.KeyDown += new System.Windows.Forms.KeyEventHandler(this.windowTabs_KeyDown);
                // 
                // tabPage1
                // 
@@ -277,7 +273,6 @@
                this.webBrowser1.Name = "webBrowser1";
                this.webBrowser1.Size = new System.Drawing.Size(728, 433);
                this.webBrowser1.TabIndex = 0;
-               this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
                this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser1_ProgressChanged);
                // 
                // contextMenuStrip1

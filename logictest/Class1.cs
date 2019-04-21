@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace logicTest
 {
      [TestFixture]
-     public class logicTests
+     public class LogicTests
      {
           [Test]
           public void HelloTest()
@@ -17,18 +17,18 @@ namespace logicTest
           }
 
           [Test]
-          public void testFormat()
+          public void TestFormat()
           {
-               // Arrange test parameters
-               var input = "hello";
-               var expected = "hello";
+               //// Arrange test parameters
+               //var input = "hello";
+               //var expected = "hello";
 
-               // Action to be performed
+               //// Action to be performed
 
-               var actual = expected;
+               //var actual = expected;
 
-               // Assert, test
-               Assert.AreEqual(expected, actual);
+               //// Assert, test
+               //Assert.AreEqual(expected, actual);
           }
 
           [Test]
