@@ -19,16 +19,16 @@ namespace uiTest
           [Test]
           public void testFormat()
           {
-               // Arrange test parameters
-               var input = "hello";
-               var expected = "hello";
+               //// Arrange test parameters
+               //var input = "hello";
+               //var expected = "hello";
 
-               // Action to be performed
+               //// Action to be performed
 
-               var actual = expected;
+               //var actual = expected;
 
-               // Assert, test
-               Assert.AreEqual(expected, actual);
+               //// Assert, test
+               //Assert.AreEqual(expected, actual);
           }
 
           [Test]

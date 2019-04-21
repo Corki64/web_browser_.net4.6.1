@@ -15,14 +15,16 @@ namespace WebBrowser.Logic
           public static List<BookmarkItem> GetBookmarkItems()
           {
                var results = new List<BookmarkItem>();
-               var rows = Adapter.GetData();
-
-               foreach (var row in rows)
+               using (var rows = Adapter.GetData())
                {
-                    var item = new BookmarkItem {Url = row.URL, Title = row.Title, Id = row.Id};
+                    foreach (var row in rows)
+                    {
+                         var item = new BookmarkItem {Url = row.URL, Title = row.Title, Id = row.Id};
 
-                    results.Add(item);
+                         results.Add(item);
+                    }
                }
+
                return results;
           }
      }

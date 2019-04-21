@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser;
 
 namespace WebBrowser.UI
 {
@@ -42,16 +43,6 @@ namespace WebBrowser.UI
           }
 
           /**
-           * Navigation function
-           */
-          private void NavigateToPage()
-          {
-               // Displays loading on status label.
-               toolStripStatusLabel1.Text = "Page Loading";
-               //windowTabs.Navigate(toolStripSpringTextBox1.Text);
-          }
-
-          /**
            * This function will allow us to hit enter from the address text box and go to web page entered.
            */
           private void toolStripSpringTextBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -59,12 +50,23 @@ namespace WebBrowser.UI
                if (e.KeyChar == (char)ConsoleKey.Enter)
                {
                     NavigateToPage();
+                    urlTextBox.Focus();
                }
           }
 
           private void Go_Click(object sender, EventArgs e)
           {
                NavigateToPage();
+          }
+
+          /**
+          * Navigation function
+          */
+          private void NavigateToPage()
+          {
+               // Displays loading on status label.
+               toolStripStatusLabel1.Text = "Page Loading";
+               windowTabs.Controls.Add(new BrowserTab());
           }
 
           private void windowTabs_KeyDown(object sender, KeyEventArgs e)
@@ -95,6 +97,13 @@ namespace WebBrowser.UI
                //webBrowser1.ShowPrintPreviewDialog();
           }
 
+
+
+
+
+
+
+
           /**
            * New tabStyle found: reference
            * https://social.msdn.microsoft.com/Forums/vstudio/en-US/785637ac-a920-4592-974c-bf9b7ac03b7f/creating-a-multi-tabbed-browser-using-webbrowser-control-in-c?forum=csharpgeneral
@@ -109,7 +118,44 @@ namespace WebBrowser.UI
                     wb.Navigate("www.google.com");
                     this.Controls.Add(wb);
                }
+
+
+
+               public BrowserTab(string urlIn)
+               {
+                    if (urlIn != null && (string.IsNullOrEmpty(urlIn) && urlIn.Equals("about:blank")))
+                    {
+                         MessageBox.Show("Invalid address!");
+                         return;
+                    }
+
+                    if (!urlIn.StartsWith("http://") && !urlIn.StartsWith("https://"))
+                    {
+                         urlIn = "http://" + urlIn;
+                    }
+
+                    try
+                    {
+                         wb.Navigate(urlIn);
+                    }
+                    catch (System.UriFormatException)
+                    {
+                         return;
+                    }
+
+               }
+
+
+               
           }
+
+
+
+
+
+
+
+
 
 
           private void manageHistoryToolStripMenuItem_Click(object sender, EventArgs e)

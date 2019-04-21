@@ -44,8 +44,8 @@
                this.toolStrip1 = new System.Windows.Forms.ToolStrip();
                this.Back = new System.Windows.Forms.ToolStripButton();
                this.Forward = new System.Windows.Forms.ToolStripButton();
-               this.Refresh = new System.Windows.Forms.ToolStripButton();
-               this.toolStripSpringTextBox1 = new WebBrowser.UI.ToolStripSpringTextBox();
+               this.BrowserRefresh = new System.Windows.Forms.ToolStripButton();
+               this.urlTextBox = new WebBrowser.UI.ToolStripSpringTextBox();
                this.Home = new System.Windows.Forms.ToolStripButton();
                this.Go = new System.Windows.Forms.ToolStripButton();
                this.Bookmark = new System.Windows.Forms.ToolStripButton();
@@ -172,8 +172,8 @@
                this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Back,
             this.Forward,
-            this.Refresh,
-            this.toolStripSpringTextBox1,
+            this.BrowserRefresh,
+            this.urlTextBox,
             this.Home,
             this.Go,
             this.Bookmark});
@@ -203,21 +203,21 @@
                this.Forward.Text = "toolStripButton1";
                this.Forward.Click += new System.EventHandler(this.toolStripButton1_Click);
                // 
-               // Refresh
+               // BrowserRefresh
                // 
-               this.Refresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-               this.Refresh.Image = global::WebBrowser.UI.Properties.Resources.Refresh_16x;
-               this.Refresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-               this.Refresh.Name = "Refresh";
-               this.Refresh.Size = new System.Drawing.Size(23, 22);
-               this.Refresh.Text = "toolStripButton3";
+               this.BrowserRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+               this.BrowserRefresh.Image = global::WebBrowser.UI.Properties.Resources.Refresh_16x;
+               this.BrowserRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+               this.BrowserRefresh.Name = "BrowserRefresh";
+               this.BrowserRefresh.Size = new System.Drawing.Size(23, 22);
+               this.BrowserRefresh.Text = "toolStripButton3";
                // 
-               // toolStripSpringTextBox1
+               // urlTextBox
                // 
-               this.toolStripSpringTextBox1.Name = "toolStripSpringTextBox1";
-               this.toolStripSpringTextBox1.Size = new System.Drawing.Size(561, 25);
-               this.toolStripSpringTextBox1.Text = "http://";
-               this.toolStripSpringTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripSpringTextBox1_KeyPress);
+               this.urlTextBox.Name = "urlTextBox";
+               this.urlTextBox.Size = new System.Drawing.Size(561, 25);
+               this.urlTextBox.Text = "http://";
+               this.urlTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripSpringTextBox1_KeyPress);
                // 
                // Home
                // 
@@ -354,12 +354,12 @@
           private System.Windows.Forms.ToolStrip toolStrip1;
           private System.Windows.Forms.ToolStripButton Forward;
           private System.Windows.Forms.ToolStripButton Back;
-          private System.Windows.Forms.ToolStripButton Refresh;
+          private System.Windows.Forms.ToolStripButton BrowserRefresh;
           private System.Windows.Forms.ToolStripButton Home;
           private System.Windows.Forms.ToolStripButton Go;
           private System.Windows.Forms.ToolStripButton Bookmark;
           private System.Windows.Forms.TabControl windowTabs;
-          private ToolStripSpringTextBox toolStripSpringTextBox1;
+          private ToolStripSpringTextBox urlTextBox;
           private System.Windows.Forms.TabPage tabPage1;
           private System.Windows.Forms.WebBrowser webBrowser1;
           private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
