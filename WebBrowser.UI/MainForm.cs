@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebBrowser;
+using WebBrowser.Logic;
 using WebBrowser = System.Windows.Forms.WebBrowser;
 
 namespace WebBrowser.UI
@@ -33,18 +34,18 @@ namespace WebBrowser.UI
                var newPage = new TabPage("Loading");
                tabList.Add(newPage);
                windowTabs.TabPages.Add(newPage);
-               currentTab++;
                var webPage = new System.Windows.Forms.WebBrowser();
                webList.Add(webPage);
                webPage.Parent = newPage;
                webPage.Dock = DockStyle.Fill;
+               currentTab++;
           }
 
           // Focus on current tab.
           private System.Windows.Forms.WebBrowser GetCurrentBrowser()
           {
                var thisTab = windowTabs.SelectedTab;
-               var thisPage = (System.Windows.Forms.WebBrowser)webList[tabList.IndexOf(thisTab)];
+               var thisPage = (System.Windows.Forms.WebBrowser) webList[tabList.IndexOf(thisTab)];
                return thisPage;
           }
 
@@ -87,7 +88,11 @@ namespace WebBrowser.UI
 
                try
                {
+                    CreateNewTab();
                     var thisPage = GetCurrentBrowser();
+                    var thisTab = windowTabs.SelectedTab;
+                    webList.Add(thisPage);
+                    tabList.Add(thisTab);
                     thisPage.Navigate(urlTextBox.Text);
                     toolStripStatusLabel1.Text = "Page Loading";
                }
@@ -173,11 +178,6 @@ namespace WebBrowser.UI
                windowTabs.TabPages.Remove(windowTabs.SelectedTab);
           }
 
-          private void WebBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-          {
-
-          }
-
           private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
           {
                MessageBox.Show(
@@ -193,8 +193,6 @@ namespace WebBrowser.UI
           // Create new tab is working.
           private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
           {
-               CreateNewTab();
-               var thisPage = new System.Windows.Forms.WebBrowser();
                NavigateToPage();
           }
 
@@ -203,14 +201,20 @@ namespace WebBrowser.UI
           {
                if (currentTab < 2) return;
                var thisTab = windowTabs.SelectedTab;
-               var thisPage = (System.Windows.Forms.WebBrowser)webList[tabList.IndexOf(thisTab)];
-               thisPage.Dispose();
+               var thisPage = (System.Windows.Forms.WebBrowser) webList[tabList.IndexOf(thisTab)];
                tabList.Remove(thisTab);
                thisTab.Dispose();
                windowTabs.TabPages.Remove(thisTab);
                currentTab--;
           }
+
+          private void Bookmark_Click(object sender, EventArgs e)
+          {
+               var thisTab = windowTabs.SelectedTab;
+               var thisPage = (System.Windows.Forms.WebBrowser) webList[tabList.IndexOf(thisTab)];
+               if (thisTab == null) throw new ArgumentNullException(nameof(thisTab));
+               thisTab.Text = thisPage.Document != null ? thisPage.DocumentTitle : "Loading";
+               var newItem = new BookmarkItem {Url = urlTextBox.Text, Title = thisPage.DocumentTitle};
+          }
      }
-
-
 }

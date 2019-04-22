@@ -163,7 +163,7 @@
                // aboutToolStripMenuItem
                // 
                this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-               this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+               this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
                this.aboutToolStripMenuItem.Text = "About";
                this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
                // 
@@ -245,6 +245,7 @@
                this.Bookmark.Name = "Bookmark";
                this.Bookmark.Size = new System.Drawing.Size(23, 22);
                this.Bookmark.Text = "toolStripButton6";
+               this.Bookmark.Click += new System.EventHandler(this.Bookmark_Click);
                // 
                // windowTabs
                // 
@@ -275,7 +276,6 @@
                this.webBrowser1.Name = "webBrowser1";
                this.webBrowser1.Size = new System.Drawing.Size(728, 433);
                this.webBrowser1.TabIndex = 0;
-               this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.WebBrowser1_DocumentCompleted);
                this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.WebBrowser1_ProgressChanged);
                // 
                // contextMenuStrip1
