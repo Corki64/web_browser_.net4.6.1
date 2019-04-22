@@ -88,7 +88,6 @@ namespace WebBrowser.UI
 
                try
                {
-                    CreateNewTab();
                     var thisPage = GetCurrentBrowser();
                     var thisTab = windowTabs.SelectedTab;
                     webList.Add(thisPage);
@@ -203,7 +202,6 @@ namespace WebBrowser.UI
                var thisTab = windowTabs.SelectedTab;
                var thisPage = (System.Windows.Forms.WebBrowser) webList[tabList.IndexOf(thisTab)];
                tabList.Remove(thisTab);
-               thisTab.Dispose();
                windowTabs.TabPages.Remove(thisTab);
                currentTab--;
           }
@@ -215,6 +213,7 @@ namespace WebBrowser.UI
                if (thisTab == null) throw new ArgumentNullException(nameof(thisTab));
                thisTab.Text = thisPage.Document != null ? thisPage.DocumentTitle : "Loading";
                var newItem = new BookmarkItem {Url = urlTextBox.Text, Title = thisPage.DocumentTitle};
+               BookmarkManager.Add(newItem);
           }
      }
 }

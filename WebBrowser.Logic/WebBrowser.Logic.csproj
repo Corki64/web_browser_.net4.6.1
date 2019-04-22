@@ -43,15 +43,43 @@
   <ItemGroup>
     <Compile Include="BookmarkItem.cs" />
     <Compile Include="BookmarkManager.cs" />
+    <Compile Include="BrowserDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BrowserDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="HistoryItem.cs" />
     <Compile Include="HistoryManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebBrowser.Data\WebBrowser.Data.csproj">
       <Project>{58351402-042b-409f-8b6a-1c8749d43ee8}</Project>
       <Name>WebBrowser.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="BrowserDBDataSet.xsc">
+      <DependentUpon>BrowserDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BrowserDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BrowserDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BrowserDBDataSet.xss">
+      <DependentUpon>BrowserDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
