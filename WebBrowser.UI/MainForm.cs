@@ -68,6 +68,11 @@ namespace WebBrowser.UI
 
           private void Go_Click(object sender, EventArgs e)
           {
+               NavigateToPage();
+          }
+
+          private void NavigateToPage()
+          {
                if (string.IsNullOrEmpty(urlTextBox.Text) || urlTextBox.Text.Equals("about:blank"))
                {
                     MessageBox.Show("Invalid Address");
@@ -84,6 +89,8 @@ namespace WebBrowser.UI
                {
                     var thisPage = GetCurrentBrowser();
                     thisPage.Navigate(urlTextBox.Text);
+                    toolStripStatusLabel1.Text = "Page Loading";
+
                }
                catch (System.UriFormatException)
                {
@@ -94,19 +101,7 @@ namespace WebBrowser.UI
 
 
 
-          /**
-           * This function called to close the browser.
-           */
-          private void ExitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
-          {
-               this.Close();
-          }
 
-          private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
-          {
-               MessageBox.Show(
-                    "Welcome to the best browser ever built in this office. It is brought to you by Luis Cortez (lac0084@auburn.edu). I hope you enjoy your stay.");
-          }
 
           private void ToolStripButton1_Click(object sender, EventArgs e)
           {
@@ -118,24 +113,12 @@ namespace WebBrowser.UI
            */
           private void ToolStripSpringTextBox1_KeyPress(object sender, KeyPressEventArgs e)
           {
-               if (e.KeyChar == (char)ConsoleKey.Enter)
+               if (e.KeyChar == (char) ConsoleKey.Enter)
                {
                     NavigateToPage();
-                    urlTextBox.Focus();
+                    e.Handled = true;
                }
           }
-
-
-          /**
-          * Navigation function
-          */
-          private void NavigateToPage()
-          {
-               // Displays loading on status label.
-               toolStripStatusLabel1.Text = "Page Loading";
-
-          }
-
 
           // Will come back to this progress bar : once navigation restored
           private void WebBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
@@ -194,6 +177,18 @@ namespace WebBrowser.UI
           private void WebBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
           {
 
+          }
+
+          private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
+          {
+               MessageBox.Show(
+                    "Welcome to the best browser ever built in this office. It is brought to you by Luis Cortez (lac0084@auburn.edu). I hope you enjoy your stay.");
+          }
+
+          // This function called to close the browser.
+          private void ExitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
+          {
+               this.Close();
           }
      }
 
