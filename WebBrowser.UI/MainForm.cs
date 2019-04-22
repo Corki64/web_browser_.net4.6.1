@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,14 +14,52 @@ namespace WebBrowser.UI
 {
      public partial class GromBrowser : Form
      {
+          private ArrayList tabList = new ArrayList();
+          private ArrayList webList = new ArrayList();
+          private int currentTab = 0;
+
           public GromBrowser()
           {
                InitializeComponent();
+               windowTabs.Controls.Clear();
+
+               CreateNewTab();
+
+               System.Windows.Forms.WebBrowser webPage = GetCurrentBrowser();
+
+
+
           }
+
+          // Creates a new tab with a browser object set at DockStyle.Fill.
+          private void CreateNewTab()
+          {
+               var newPage = new TabPage("Loading");
+               tabList.Add(newPage);
+               windowTabs.TabPages.Add(newPage);
+               currentTab++;
+               var webPage = new System.Windows.Forms.WebBrowser();
+               webList.Add(webPage);
+               webPage.Parent = newPage;
+               newPage.Dock = DockStyle.Fill;
+               throw new NotImplementedException();
+          }
+
+
+          // Focus on current tab.
+          private System.Windows.Forms.WebBrowser GetCurrentBrowser()
+          {
+               var thisTab = windowTabs.SelectedTab;
+               var thisPage = (System.Windows.Forms.WebBrowser)webList[tabList.IndexOf(thisTab)];
+               return thisPage;
+          }
+
 
           private void Form1_Load(object sender, EventArgs e)
           {
                //windowTabs.Controls.Add(new BrowserTab());
+               
+
           }
 
           /**
@@ -122,6 +161,11 @@ namespace WebBrowser.UI
           private void CloseCurrentTabToolStripMenuItem_Click_1(object sender, EventArgs e)
           {
                windowTabs.TabPages.Remove(windowTabs.SelectedTab);
+          }
+
+          private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+          {
+
           }
      }
 
