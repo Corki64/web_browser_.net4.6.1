@@ -49,12 +49,25 @@ namespace WebBrowser.UI
           }
 
           // Tab name update.
-          private void UpdateName(TabPage tb)
+          private void UpdateName(TabPage tabIn)
           {
-               var thisTab = tb;
+               if (tabIn == null) throw new ArgumentNullException(nameof(tabIn));
+               var thisTab = tabIn;
                var thisPage = (System.Windows.Forms.WebBrowser) webList[tabList.IndexOf(this.currentTab)];
                thisTab.Text = thisPage.Document != null ? thisPage.DocumentTitle : "Loading";
-          } 
+          }
+
+          // Updates all names on all tabs.
+          private void UpdateTabNames()
+          {
+               foreach (TabPage tab in windowTabs.TabPages)
+               {
+                    UpdateName(tab);
+               }
+          }
+
+
+
 
           /**
            * This function called to close the browser.
