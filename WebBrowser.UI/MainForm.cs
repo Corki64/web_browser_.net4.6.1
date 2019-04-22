@@ -198,13 +198,13 @@ namespace WebBrowser.UI
           }
 
           // Create new tab is working.
-          private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+          private void NewTabToolStripMenuItemClick(object sender, EventArgs e)
           {
                NavigateToPage();
           }
 
           // Will closes open tabs.
-          private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+          private void CloseCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
           {
                if (currentTab < 2) return;
                var thisTab = windowTabs.SelectedTab;
