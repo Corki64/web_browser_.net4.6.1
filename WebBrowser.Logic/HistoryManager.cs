@@ -16,14 +16,19 @@ namespace WebBrowser.Logic
 
           public static List<HistoryItem> GetHistoryItems()
           {
-               List<HistoryItem> results = new List<HistoryItem>();
-               BrowserDBDataSet.HistoryDataTable rows = Adapter.GetData();
-
-               foreach (BrowserDBDataSet.HistoryRow row in rows)
+               var results = new List<HistoryItem>();
+               using (var rows = Adapter.GetData())
                {
-                    HistoryItem item = new HistoryItem {Id = row.Id, Url = row.URL, Title = row.Title, Date = row.Date};
-                    results.Add(item);
+                    foreach (var row in rows)
+                    {
+                         HistoryItem item = new HistoryItem { Id = row.Id, Url = row.URL, Title = row.Title, Date = row.Date };
+
+                         results.Add(item);
+                    }
+
                }
+
+               
 
                return results;
           }

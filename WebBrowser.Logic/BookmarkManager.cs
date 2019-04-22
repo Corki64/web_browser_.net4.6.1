@@ -7,6 +7,7 @@ namespace WebBrowser.Logic
      public class BookmarkManager
      {
           public static BookmarksTableAdapter Adapter = new BookmarksTableAdapter();
+
           public static void Add(BookmarkItem itemIn)
           {
                Adapter.Insert(itemIn.Url, itemIn.Title, itemIn.Id);
