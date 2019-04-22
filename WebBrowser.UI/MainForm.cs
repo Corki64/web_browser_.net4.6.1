@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WebBrowser;
+using WebBrowser = System.Windows.Forms.WebBrowser;
 
 namespace WebBrowser.UI
 {
@@ -22,13 +23,8 @@ namespace WebBrowser.UI
           {
                InitializeComponent();
                windowTabs.Controls.Clear();
-
                CreateNewTab();
-
-               System.Windows.Forms.WebBrowser webPage = GetCurrentBrowser();
-
-
-
+               var webPage = GetCurrentBrowser();
           }
 
           // Creates a new tab with a browser object set at DockStyle.Fill.
@@ -41,10 +37,8 @@ namespace WebBrowser.UI
                var webPage = new System.Windows.Forms.WebBrowser();
                webList.Add(webPage);
                webPage.Parent = newPage;
-               newPage.Dock = DockStyle.Fill;
-               throw new NotImplementedException();
+               webPage.Dock = DockStyle.Fill;
           }
-
 
           // Focus on current tab.
           private System.Windows.Forms.WebBrowser GetCurrentBrowser()
@@ -54,13 +48,13 @@ namespace WebBrowser.UI
                return thisPage;
           }
 
-
-          private void Form1_Load(object sender, EventArgs e)
+          // Tab name update.
+          private void UpdateName(TabPage tb)
           {
-               //windowTabs.Controls.Add(new BrowserTab());
-               
-
-          }
+               var thisTab = tb;
+               var thisPage = (System.Windows.Forms.WebBrowser) webList[tabList.IndexOf(this.currentTab)];
+               thisTab.Text = thisPage.Document != null ? thisPage.DocumentTitle : "Loading";
+          } 
 
           /**
            * This function called to close the browser.

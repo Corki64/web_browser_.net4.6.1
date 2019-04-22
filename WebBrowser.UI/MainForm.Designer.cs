@@ -319,7 +319,6 @@
                this.Name = "GromBrowser";
                this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
                this.Text = "Grom Browser";
-               this.Load += new System.EventHandler(this.Form1_Load);
                this.menuStrip1.ResumeLayout(false);
                this.menuStrip1.PerformLayout();
                this.toolStrip1.ResumeLayout(false);
