@@ -94,6 +94,14 @@ namespace WebBrowser.UI
                     tabList.Add(thisTab);
                     thisPage.Navigate(urlTextBox.Text);
                     toolStripStatusLabel1.Text = "Page Loading";
+
+                    HistoryItem newItem = new HistoryItem
+                    {
+                         Date = DateTime.Now, Title = thisPage.DocumentTitle, Url = urlTextBox.Text
+                    };
+
+                    HistoryManager.AddHistoryItem(newItem);
+
                }
                catch (System.UriFormatException)
                {
