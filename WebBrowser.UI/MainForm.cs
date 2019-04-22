@@ -197,6 +197,19 @@ namespace WebBrowser.UI
                var thisPage = new System.Windows.Forms.WebBrowser();
                NavigateToPage();
           }
+
+          // Will closes open tabs.
+          private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+          {
+               if (currentTab < 2) return;
+               var thisTab = windowTabs.SelectedTab;
+               var thisPage = (System.Windows.Forms.WebBrowser)webList[tabList.IndexOf(thisTab)];
+               thisPage.Dispose();
+               tabList.Remove(thisTab);
+               thisTab.Dispose();
+               windowTabs.TabPages.Remove(thisTab);
+               currentTab--;
+          }
      }
 
 
