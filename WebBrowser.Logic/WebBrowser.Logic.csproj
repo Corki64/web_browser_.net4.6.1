@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="BookmarkItem.cs" />
     <Compile Include="BookmarkManager.cs" />
+    <Compile Include="BrowserDBDataSet.cs">
+      <DependentUpon>BrowserDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="BrowserDBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -472,9 +472,9 @@ namespace WebBrowser.Logic {
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
                 this.columnURL.AllowDBNull = false;
-                this.columnURL.MaxLength = 50;
+                this.columnURL.MaxLength = 5000;
                 this.columnTitle.AllowDBNull = false;
-                this.columnTitle.MaxLength = 50;
+                this.columnTitle.MaxLength = 5000;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -780,9 +780,9 @@ namespace WebBrowser.Logic {
                 this.columnId.ReadOnly = true;
                 this.columnId.Unique = true;
                 this.columnURL.AllowDBNull = false;
-                this.columnURL.MaxLength = 50;
+                this.columnURL.MaxLength = 5000;
                 this.columnTitle.AllowDBNull = false;
-                this.columnTitle.MaxLength = 50;
+                this.columnTitle.MaxLength = 5000;
                 this.columnDate.AllowDBNull = false;
             }
             
