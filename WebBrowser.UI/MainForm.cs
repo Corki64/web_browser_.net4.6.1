@@ -90,7 +90,6 @@ namespace WebBrowser.UI
                     var thisPage = GetCurrentBrowser();
                     thisPage.Navigate(urlTextBox.Text);
                     toolStripStatusLabel1.Text = "Page Loading";
-
                }
                catch (System.UriFormatException)
                {
@@ -189,6 +188,14 @@ namespace WebBrowser.UI
           private void ExitWebBrowserToolStripMenuItem_Click(object sender, EventArgs e)
           {
                this.Close();
+          }
+
+          // Create new tab is working.
+          private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+          {
+               CreateNewTab();
+               var thisPage = new System.Windows.Forms.WebBrowser();
+               NavigateToPage();
           }
      }
 
