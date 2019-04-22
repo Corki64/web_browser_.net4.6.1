@@ -57,12 +57,37 @@ namespace WebBrowser.UI
                thisTab.Text = thisPage.Document != null ? thisPage.DocumentTitle : "Loading";
           }
 
-          // Updates all names on all tabs.
+          // Updates all tab names.
           private void UpdateTabNames()
           {
                foreach (TabPage tab in windowTabs.TabPages)
                {
                     UpdateName(tab);
+               }
+          }
+
+          private void Go_Click(object sender, EventArgs e)
+          {
+               if (string.IsNullOrEmpty(urlTextBox.Text) || urlTextBox.Text.Equals("about:blank"))
+               {
+                    MessageBox.Show("Invalid Address");
+                    urlTextBox.Focus();
+                    return;
+               }
+
+               if (!urlTextBox.Text.StartsWith("http://") && !urlTextBox.Text.StartsWith("https://"))
+               {
+                    urlTextBox.Text = "http://" + urlTextBox.Text;
+               }
+
+               try
+               {
+                    var thisPage = GetCurrentBrowser();
+                    thisPage.Navigate(urlTextBox.Text);
+               }
+               catch (System.UriFormatException)
+               {
+                    return;
                }
           }
 
@@ -100,10 +125,6 @@ namespace WebBrowser.UI
                }
           }
 
-          private void Go_Click(object sender, EventArgs e)
-          {
-               NavigateToPage();
-          }
 
           /**
           * Navigation function
@@ -170,7 +191,7 @@ namespace WebBrowser.UI
                windowTabs.TabPages.Remove(windowTabs.SelectedTab);
           }
 
-          private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+          private void WebBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
           {
 
           }
