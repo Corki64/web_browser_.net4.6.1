@@ -50,6 +50,8 @@
                this.Home = new System.Windows.Forms.ToolStripButton();
                this.Go = new System.Windows.Forms.ToolStripButton();
                this.Bookmark = new System.Windows.Forms.ToolStripButton();
+               this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+               this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
                this.windowTabs = new System.Windows.Forms.TabControl();
                this.tabPage1 = new System.Windows.Forms.TabPage();
                this.webBrowser1 = new System.Windows.Forms.WebBrowser();
@@ -57,8 +59,6 @@
                this.statusStrip1 = new System.Windows.Forms.StatusStrip();
                this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
                this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-               this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-               this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
                this.menuStrip1.SuspendLayout();
                this.toolStrip1.SuspendLayout();
                this.windowTabs.SuspendLayout();
@@ -196,7 +196,7 @@
                this.Back.ImageTransparentColor = System.Drawing.Color.Magenta;
                this.Back.Name = "Back";
                this.Back.Size = new System.Drawing.Size(23, 22);
-               this.Back.Text = "toolStripButton2";
+               this.Back.Text = "Back";
                // 
                // Forward
                // 
@@ -205,7 +205,7 @@
                this.Forward.ImageTransparentColor = System.Drawing.Color.Magenta;
                this.Forward.Name = "Forward";
                this.Forward.Size = new System.Drawing.Size(23, 22);
-               this.Forward.Text = "toolStripButton1";
+               this.Forward.Text = "Forward";
                // 
                // BrowserRefresh
                // 
@@ -214,7 +214,7 @@
                this.BrowserRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
                this.BrowserRefresh.Name = "BrowserRefresh";
                this.BrowserRefresh.Size = new System.Drawing.Size(23, 22);
-               this.BrowserRefresh.Text = "toolStripButton3";
+               this.BrowserRefresh.Text = "Refresh";
                // 
                // urlTextBox
                // 
@@ -230,7 +230,7 @@
                this.Home.ImageTransparentColor = System.Drawing.Color.Magenta;
                this.Home.Name = "Home";
                this.Home.Size = new System.Drawing.Size(23, 22);
-               this.Home.Text = "toolStripButton4";
+               this.Home.Text = "Home";
                // 
                // Go
                // 
@@ -239,7 +239,7 @@
                this.Go.ImageTransparentColor = System.Drawing.Color.Magenta;
                this.Go.Name = "Go";
                this.Go.Size = new System.Drawing.Size(23, 22);
-               this.Go.Text = "toolStripButton5";
+               this.Go.Text = "Go";
                this.Go.Click += new System.EventHandler(this.Go_Click);
                // 
                // Bookmark
@@ -249,8 +249,22 @@
                this.Bookmark.ImageTransparentColor = System.Drawing.Color.Magenta;
                this.Bookmark.Name = "Bookmark";
                this.Bookmark.Size = new System.Drawing.Size(23, 22);
-               this.Bookmark.Text = "toolStripButton6";
+               this.Bookmark.Text = "Bookmark";
                this.Bookmark.Click += new System.EventHandler(this.Bookmark_Click);
+               // 
+               // toolStripTextBox1
+               // 
+               this.toolStripTextBox1.Name = "toolStripTextBox1";
+               this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
+               // 
+               // toolStripButton1
+               // 
+               this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+               this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+               this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+               this.toolStripButton1.Name = "toolStripButton1";
+               this.toolStripButton1.Size = new System.Drawing.Size(46, 22);
+               this.toolStripButton1.Text = "Search";
                // 
                // windowTabs
                // 
@@ -310,20 +324,6 @@
                this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
                this.toolStripStatusLabel1.Size = new System.Drawing.Size(118, 17);
                this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
-               // 
-               // toolStripTextBox1
-               // 
-               this.toolStripTextBox1.Name = "toolStripTextBox1";
-               this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
-               // 
-               // toolStripButton1
-               // 
-               this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-               this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-               this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-               this.toolStripButton1.Name = "toolStripButton1";
-               this.toolStripButton1.Size = new System.Drawing.Size(46, 22);
-               this.toolStripButton1.Text = "Search";
                // 
                // GromBrowser
                // 
