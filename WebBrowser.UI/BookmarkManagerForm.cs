@@ -26,5 +26,10 @@ namespace WebBrowser.UI
                     bookmarkItemListBox.Items.Add("Name: " + item.Title + " URL: " + item.Url);
                }
           }
+
+          private void bookmarkItemListBox_SelectedIndexChanged(object sender, EventArgs e)
+          {
+
+          }
      }
 }

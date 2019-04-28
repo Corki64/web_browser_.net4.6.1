@@ -94,19 +94,25 @@ namespace WebBrowser.UI
                     tabList.Add(thisTab);
                     thisPage.Navigate(urlTextBox.Text);
                     toolStripStatusLabel1.Text = "Page Loading";
+                    AddHistoryItem();
 
-                    HistoryItem newItem = new HistoryItem
-                    {
-                         Date = DateTime.Now, Title = thisPage.DocumentTitle, Url = urlTextBox.Text
-                    };
-
-                    HistoryManager.AddHistoryItem(newItem);
 
                }
                catch (System.UriFormatException)
                {
                     return;
                }
+          }
+
+          private void AddHistoryItem()
+          {
+               var thisPage = GetCurrentBrowser();
+               var newItem = new HistoryItem
+               {
+                    Date = DateTime.Now, Title = thisPage.DocumentTitle, Url = urlTextBox.Text
+               };
+
+               HistoryManager.AddHistoryItem(newItem);
           }
 
 
@@ -222,6 +228,11 @@ namespace WebBrowser.UI
                thisTab.Text = thisPage.Document != null ? thisPage.DocumentTitle : "Loading";
                var newItem = new BookmarkItem {Url = urlTextBox.Text, Title = thisPage.DocumentTitle};
                BookmarkManager.Add(newItem);
+          }
+
+          private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+          {
+
           }
      }
 }

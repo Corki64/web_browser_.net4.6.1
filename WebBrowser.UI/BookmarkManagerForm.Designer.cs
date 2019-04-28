@@ -39,6 +39,7 @@
                this.bookmarkItemListBox.Name = "bookmarkItemListBox";
                this.bookmarkItemListBox.Size = new System.Drawing.Size(800, 450);
                this.bookmarkItemListBox.TabIndex = 0;
+               this.bookmarkItemListBox.SelectedIndexChanged += new System.EventHandler(this.bookmarkItemListBox_SelectedIndexChanged);
                // 
                // BookmarkManagerForm
                // 

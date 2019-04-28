@@ -8,6 +8,7 @@ namespace WebBrowser.Logic
      public class HistoryManager
      {
           public static HistoryTableAdapter Adapter = new HistoryTableAdapter();
+          
 
           public static void AddHistoryItem(HistoryItem itemIn)
           {
@@ -26,6 +27,15 @@ namespace WebBrowser.Logic
                     }
                }
                return results;
+          }
+
+          public static void DeleteAllHistory()
+          {
+               var historyItems = Adapter.GetData();
+               foreach (var item in historyItems)
+               {
+                    Adapter.Delete(item.Id, item.URL, item.Title, item.Date);
+               }
           }
      }
 }
