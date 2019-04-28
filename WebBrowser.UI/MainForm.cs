@@ -154,7 +154,8 @@ namespace WebBrowser.UI
           //Once i can get a valid name for webBrowser instance than I can turn this on
           private void PrintPageToolStripMenuItem_Click(object sender, EventArgs e)
           {
-               //webBrowser1.ShowPrintPreviewDialog();
+               var thisPage = GetCurrentBrowser();
+               thisPage.ShowPrintPreviewDialog();
           }
 
 
@@ -264,6 +265,12 @@ namespace WebBrowser.UI
           {
                var thisPage = GetCurrentBrowser();
                thisPage.Refresh();
+          }
+
+          private void savePageAsHTMLToolStripMenuItem_Click(object sender, EventArgs e)
+          {
+               var thisPage = GetCurrentBrowser();
+               thisPage.ShowSaveAsDialog();
           }
      }
 }

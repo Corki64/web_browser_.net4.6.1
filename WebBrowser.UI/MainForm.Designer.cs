@@ -112,6 +112,7 @@
                this.savePageAsHTMLToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
                this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.savePageAsHTMLToolStripMenuItem.Text = "Save Page as HTML";
+               this.savePageAsHTMLToolStripMenuItem.Click += new System.EventHandler(this.savePageAsHTMLToolStripMenuItem_Click);
                // 
                // printPageToolStripMenuItem
                // 
