@@ -69,9 +69,9 @@
                // menuStrip1
                // 
                this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.toolsToolStripMenuItem,
-            this.helpToolStripMenuItem});
+               this.fileToolStripMenuItem,
+               this.toolsToolStripMenuItem,
+               this.helpToolStripMenuItem});
                this.menuStrip1.Location = new System.Drawing.Point(0, 0);
                this.menuStrip1.Name = "menuStrip1";
                this.menuStrip1.Size = new System.Drawing.Size(866, 24);
@@ -81,11 +81,11 @@
                // fileToolStripMenuItem
                // 
                this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newTabToolStripMenuItem,
-            this.closeCurrentTabToolStripMenuItem,
-            this.savePageAsHTMLToolStripMenuItem,
-            this.printPageToolStripMenuItem,
-            this.exitWebBrowserToolStripMenuItem});
+               this.newTabToolStripMenuItem,
+               this.closeCurrentTabToolStripMenuItem,
+               this.savePageAsHTMLToolStripMenuItem,
+               this.printPageToolStripMenuItem,
+               this.exitWebBrowserToolStripMenuItem});
                this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
                this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
                this.fileToolStripMenuItem.Text = "File";
@@ -133,8 +133,8 @@
                // toolsToolStripMenuItem
                // 
                this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manageHistoryToolStripMenuItem,
-            this.manageBookmarksToolStripMenuItem});
+               this.manageHistoryToolStripMenuItem,
+               this.manageBookmarksToolStripMenuItem});
                this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
                this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
                this.toolsToolStripMenuItem.Text = "Tools";
@@ -158,7 +158,7 @@
                // helpToolStripMenuItem
                // 
                this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+               this.aboutToolStripMenuItem});
                this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
                this.helpToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
                this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
@@ -174,15 +174,15 @@
                // toolStrip1
                // 
                this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.Back,
-            this.Forward,
-            this.BrowserRefresh,
-            this.urlTextBox,
-            this.Home,
-            this.Go,
-            this.Bookmark,
-            this.toolStripTextBox1,
-            this.toolStripButton1});
+               this.Back,
+               this.Forward,
+               this.BrowserRefresh,
+               this.urlTextBox,
+               this.Home,
+               this.Go,
+               this.Bookmark,
+               this.toolStripTextBox1,
+               this.toolStripButton1});
                this.toolStrip1.Location = new System.Drawing.Point(0, 24);
                this.toolStrip1.Name = "toolStrip1";
                this.toolStrip1.Size = new System.Drawing.Size(866, 25);
@@ -309,8 +309,8 @@
                // statusStrip1
                // 
                this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1,
-            this.toolStripStatusLabel1});
+               this.toolStripProgressBar1,
+               this.toolStripStatusLabel1});
                this.statusStrip1.Location = new System.Drawing.Point(0, 492);
                this.statusStrip1.Name = "statusStrip1";
                this.statusStrip1.Size = new System.Drawing.Size(866, 22);
