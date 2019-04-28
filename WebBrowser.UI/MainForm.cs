@@ -259,12 +259,6 @@ namespace WebBrowser.UI
                     _tabList.Add(thisTab);
                     thisPage.Navigate(urlTextBox.Text);
                     AddHistoryItem();
-                   
-                    var newEvent = new WebBrowserNavigatedEventArgs(thisPage.Url);
-                    if (thisPage.Navigated == true)
-                    {
-                         urlTextBox.Text = thisPage.Url.ToString();
-                    }
                }
                catch (System.UriFormatException)
                {
