@@ -25,7 +25,6 @@ namespace WebBrowser.UI
                InitializeComponent();
                windowTabs.Controls.Clear();
                CreateNewTab();
-               var webPage = GetCurrentBrowser();
           }
 
           // Creates a new tab with a browser object set at DockStyle.Fill.
@@ -206,6 +205,7 @@ namespace WebBrowser.UI
           // Create new tab is working.
           private void NewTabToolStripMenuItemClick(object sender, EventArgs e)
           {
+               CreateNewTab();
                NavigateToPage();
           }
 
