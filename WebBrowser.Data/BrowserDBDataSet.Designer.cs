@@ -1351,7 +1351,7 @@ namespace WebBrowser.Data.BrowserDBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string URL, string Title, int itemInId) {
+        public virtual int Insert(string URL, string Title) {
             if ((URL == null)) {
                 throw new global::System.ArgumentNullException("URL");
             }

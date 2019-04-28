@@ -10,7 +10,7 @@ namespace WebBrowser.Logic
 
           public static void Add(BookmarkItem itemIn)
           {
-               Adapter.Insert(itemIn.Url, itemIn.Title, itemIn.Id);
+               Adapter.Insert(itemIn.Url, itemIn.Title);
           }
 
           public static List<BookmarkItem> GetBookmarkItems()

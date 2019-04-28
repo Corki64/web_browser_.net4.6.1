@@ -27,7 +27,7 @@ namespace WebBrowser.UI
                }
           }
 
-          private void bookmarkItemListBox_SelectedIndexChanged(object sender, EventArgs e)
+          private void BookmarkItemListBox_SelectedIndexChanged(object sender, EventArgs e)
           {
 
           }

@@ -230,9 +230,10 @@ namespace WebBrowser.UI
                BookmarkManager.Add(newItem);
           }
 
-          private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+          private void WebBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
           {
 
           }
+
      }
 }
