@@ -139,13 +139,15 @@ namespace WebBrowser.UI
           // Will come back to this progress bar : once navigation restored
           private void WebBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
           {
+
                /**
                 * This if statement will take care of a divide by zero error.
                 */
+               
+
                if (e.CurrentProgress > 0 && e.MaximumProgress > 0)
                {
-                    if (toolStripProgressBar1.ProgressBar != null)
-                         toolStripProgressBar1.ProgressBar.Value = (int) (e.CurrentProgress * 100 / e.MaximumProgress);
+                    toolStripProgressBar1.ProgressBar.Value = (int) (e.CurrentProgress * 100 / e.MaximumProgress);
                }
           }
 
@@ -235,5 +237,33 @@ namespace WebBrowser.UI
 
           }
 
+          private void toolStripProgressBar1_Click(object sender, EventArgs e)
+          {
+
+          }
+
+          private void Back_Click(object sender, EventArgs e)
+          {
+               var thisPage = GetCurrentBrowser();
+               if (thisPage.CanGoBack)
+               {
+                    thisPage.GoBack();
+               }
+          }
+
+          private void Forward_Click(object sender, EventArgs e)
+          {
+               var thisPage = GetCurrentBrowser();
+               if (thisPage.CanGoForward)
+               {
+                    thisPage.GoForward();
+               }
+          }
+
+          private void BrowserRefresh_Click(object sender, EventArgs e)
+          {
+               var thisPage = GetCurrentBrowser();
+               thisPage.Refresh();
+          }
      }
 }

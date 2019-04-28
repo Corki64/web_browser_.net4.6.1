@@ -197,6 +197,7 @@
                this.Back.Name = "Back";
                this.Back.Size = new System.Drawing.Size(23, 22);
                this.Back.Text = "Back";
+               this.Back.Click += new System.EventHandler(this.Back_Click);
                // 
                // Forward
                // 
@@ -206,6 +207,7 @@
                this.Forward.Name = "Forward";
                this.Forward.Size = new System.Drawing.Size(23, 22);
                this.Forward.Text = "Forward";
+               this.Forward.Click += new System.EventHandler(this.Forward_Click);
                // 
                // BrowserRefresh
                // 
@@ -215,6 +217,7 @@
                this.BrowserRefresh.Name = "BrowserRefresh";
                this.BrowserRefresh.Size = new System.Drawing.Size(23, 22);
                this.BrowserRefresh.Text = "Refresh";
+               this.BrowserRefresh.Click += new System.EventHandler(this.BrowserRefresh_Click);
                // 
                // urlTextBox
                // 
