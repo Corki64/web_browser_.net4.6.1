@@ -265,5 +265,10 @@ namespace WebBrowser.UI
                     return;
                }
           }
+
+          private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+          {
+
+          }
      }
 }
