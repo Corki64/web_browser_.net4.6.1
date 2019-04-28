@@ -112,7 +112,7 @@
                this.savePageAsHTMLToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
                this.savePageAsHTMLToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
                this.savePageAsHTMLToolStripMenuItem.Text = "Save Page as HTML";
-               this.savePageAsHTMLToolStripMenuItem.Click += new System.EventHandler(this.savePageAsHTMLToolStripMenuItem_Click);
+               this.savePageAsHTMLToolStripMenuItem.Click += new System.EventHandler(this.SavePageAsHTMLToolStripMenuItem_Click);
                // 
                // printPageToolStripMenuItem
                // 
@@ -299,7 +299,6 @@
                this.webBrowser1.Name = "webBrowser1";
                this.webBrowser1.Size = new System.Drawing.Size(852, 433);
                this.webBrowser1.TabIndex = 0;
-               this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.WebBrowser1_DocumentCompleted);
                this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.WebBrowser1_ProgressChanged);
                // 
                // contextMenuStrip1

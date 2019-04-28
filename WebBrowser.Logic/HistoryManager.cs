@@ -22,7 +22,7 @@ namespace WebBrowser.Logic
                {
                     foreach (var row in rows)
                     {
-                         HistoryItem item = new HistoryItem { Id = row.Id, Url = row.URL, Title = row.Title, Date = row.Date };
+                         var item = new HistoryItem { Id = row.Id, Url = row.URL, Title = row.Title, Date = row.Date };
                          results.Add(item);
                     }
                }

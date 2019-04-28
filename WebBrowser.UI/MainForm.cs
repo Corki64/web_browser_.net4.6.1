@@ -16,9 +16,9 @@ namespace WebBrowser.UI
 {
      public partial class GromBrowser : Form
      {
-          private ArrayList tabList = new ArrayList();
-          private ArrayList webList = new ArrayList();
-          private int currentTab = 0;
+          private ArrayList _tabList = new ArrayList();
+          private ArrayList _webList = new ArrayList();
+          private int _currentTab = 0;
 
           public GromBrowser()
           {
@@ -30,21 +30,24 @@ namespace WebBrowser.UI
           // Creates a new tab with a browser object set at DockStyle.Fill.
           private void CreateNewTab()
           {
-               var newPage = new TabPage("Loading");
-               tabList.Add(newPage);
+               var newPage = new TabPage();
+               newPage.Focus();
+               _tabList.Add(newPage);
                windowTabs.TabPages.Add(newPage);
                var webPage = new System.Windows.Forms.WebBrowser();
-               webList.Add(webPage);
+               webPage.Navigate("www.google.com");
+               _webList.Add(webPage);
                webPage.Parent = newPage;
                webPage.Dock = DockStyle.Fill;
-               currentTab++;
+
+               _currentTab++;
           }
 
           // Focus on current tab.
           private System.Windows.Forms.WebBrowser GetCurrentBrowser()
           {
                var thisTab = windowTabs.SelectedTab;
-               var thisPage = (System.Windows.Forms.WebBrowser) webList[tabList.IndexOf(thisTab)];
+               var thisPage = (System.Windows.Forms.WebBrowser) _webList[_tabList.IndexOf(thisTab)];
                return thisPage;
           }
 
@@ -53,7 +56,7 @@ namespace WebBrowser.UI
           {
                if (tabIn == null) throw new ArgumentNullException(nameof(tabIn));
                var thisTab = tabIn;
-               var thisPage = (System.Windows.Forms.WebBrowser) webList[tabList.IndexOf(this.currentTab)];
+               var thisPage = (System.Windows.Forms.WebBrowser) _webList[_tabList.IndexOf(this._currentTab)];
                thisTab.Text = thisPage.Document != null ? thisPage.DocumentTitle : "Loading";
           }
 
@@ -71,70 +74,7 @@ namespace WebBrowser.UI
                NavigateToPage();
           }
 
-          private void NavigateToPage()
-          {
-               if (string.IsNullOrEmpty(urlTextBox.Text) || urlTextBox.Text.Equals("about:blank"))
-               {
-                    MessageBox.Show("Invalid Address");
-                    urlTextBox.Focus();
-                    return;
-               }
-
-               if (!urlTextBox.Text.StartsWith("http://") && !urlTextBox.Text.StartsWith("https://"))
-               {
-                    urlTextBox.Text = "http://" + urlTextBox.Text;
-               }
-
-               try
-               {
-                    var thisPage = GetCurrentBrowser();
-                    var thisTab = windowTabs.SelectedTab;
-                    webList.Add(thisPage);
-                    tabList.Add(thisTab);
-                    thisPage.Navigate(urlTextBox.Text);
-                    toolStripStatusLabel1.Text = "Page Loading";
-                    AddHistoryItem();
-
-
-               }
-               catch (System.UriFormatException)
-               {
-                    return;
-               }
-          }
-
-          private void AddHistoryItem()
-          {
-               var thisPage = GetCurrentBrowser();
-               var newItem = new HistoryItem
-               {
-                    Date = DateTime.Now, Title = thisPage.DocumentTitle, Url = urlTextBox.Text
-               };
-
-               HistoryManager.AddHistoryItem(newItem);
-          }
-
-
-
-
-
-
-          private void ToolStripButton1_Click(object sender, EventArgs e)
-          {
-
-          }
-
-          /**
-           * This function will allow us to hit enter from the address text box and go to web page entered.
-           */
-          private void ToolStripSpringTextBox1_KeyPress(object sender, KeyPressEventArgs e)
-          {
-               if (e.KeyChar == (char) ConsoleKey.Enter)
-               {
-                    NavigateToPage();
-                    e.Handled = true;
-               }
-          }
+          
 
           // Will come back to this progress bar : once navigation restored
           private void WebBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
@@ -147,16 +87,11 @@ namespace WebBrowser.UI
 
                if (e.CurrentProgress > 0 && e.MaximumProgress > 0)
                {
-                    toolStripProgressBar1.ProgressBar.Value = (int) (e.CurrentProgress * 100 / e.MaximumProgress);
+                    if (toolStripProgressBar1.ProgressBar != null)
+                         toolStripProgressBar1.ProgressBar.Value = (int) (e.CurrentProgress * 100 / e.MaximumProgress);
                }
           }
 
-          //Once i can get a valid name for webBrowser instance than I can turn this on
-          private void PrintPageToolStripMenuItem_Click(object sender, EventArgs e)
-          {
-               var thisPage = GetCurrentBrowser();
-               thisPage.ShowPrintPreviewDialog();
-          }
 
 
 
@@ -176,23 +111,21 @@ namespace WebBrowser.UI
 
 
 
+          // Loads history form.
           private void ManageHistoryToolStripMenuItem_Click(object sender, EventArgs e)
           {
                var historyForm = new HistoryManagerForm();
                historyForm.ShowDialog();
           }
 
+          // Loads the bookmark form.
           public void ManageBookmarksToolStripMenuItem_Click(object sender, EventArgs e)
           {
                var bookmarkForm = new BookmarkManagerForm();
                bookmarkForm.ShowDialog();
           }
 
-          private void CloseCurrentTabToolStripMenuItem_Click_1(object sender, EventArgs e)
-          {
-               windowTabs.TabPages.Remove(windowTabs.SelectedTab);
-          }
-
+          // Contents of about menu strip item as follows:
           private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
           {
                MessageBox.Show(
@@ -215,34 +148,31 @@ namespace WebBrowser.UI
           // Will closes open tabs.
           private void CloseCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
           {
-               if (currentTab < 2) return;
+               if (_currentTab < 2) return;
                var thisTab = windowTabs.SelectedTab;
-               var thisPage = (System.Windows.Forms.WebBrowser) webList[tabList.IndexOf(thisTab)];
-               tabList.Remove(thisTab);
+               var thisPage = (System.Windows.Forms.WebBrowser) _webList[_tabList.IndexOf(thisTab)];
+               _tabList.Remove(thisTab);
                windowTabs.TabPages.Remove(thisTab);
-               currentTab--;
+               _currentTab--;
           }
 
+          // Adds bookmarks to bookmark database.
           private void Bookmark_Click(object sender, EventArgs e)
           {
                var thisTab = windowTabs.SelectedTab;
-               var thisPage = (System.Windows.Forms.WebBrowser) webList[tabList.IndexOf(thisTab)];
+               var thisPage = (System.Windows.Forms.WebBrowser) _webList[_tabList.IndexOf(thisTab)];
                if (thisTab == null) throw new ArgumentNullException(nameof(thisTab));
-               thisTab.Text = thisPage.Document != null ? thisPage.DocumentTitle : "Loading";
                var newItem = new BookmarkItem {Url = urlTextBox.Text, Title = thisPage.DocumentTitle};
-               BookmarkManager.Add(newItem);
+
+               // Checks to see if it the bookmark is already in the database.
+               var currentBookMarks = BookmarkManager.GetBookmarkItems();
+               if (!currentBookMarks.Contains(newItem))
+               {
+                    BookmarkManager.Add(newItem);
+               }
           }
 
-          private void WebBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-          {
-
-          }
-
-          private void toolStripProgressBar1_Click(object sender, EventArgs e)
-          {
-
-          }
-
+          // Checks to see if backwards is possible then navigates back.
           private void Back_Click(object sender, EventArgs e)
           {
                var thisPage = GetCurrentBrowser();
@@ -252,6 +182,7 @@ namespace WebBrowser.UI
                }
           }
 
+          // Checks to see if forward is possible then navigates forward.
           private void Forward_Click(object sender, EventArgs e)
           {
                var thisPage = GetCurrentBrowser();
@@ -261,16 +192,84 @@ namespace WebBrowser.UI
                }
           }
 
+          // Refreshes current page.
           private void BrowserRefresh_Click(object sender, EventArgs e)
           {
                var thisPage = GetCurrentBrowser();
                thisPage.Refresh();
           }
 
-          private void savePageAsHTMLToolStripMenuItem_Click(object sender, EventArgs e)
+          // Opens save as dialog box.
+          private void SavePageAsHTMLToolStripMenuItem_Click(object sender, EventArgs e)
           {
                var thisPage = GetCurrentBrowser();
                thisPage.ShowSaveAsDialog();
+          }
+
+          // Opens the print preview Dialog box.
+          private void PrintPageToolStripMenuItem_Click(object sender, EventArgs e)
+          {
+               var thisPage = GetCurrentBrowser();
+               thisPage.ShowPrintPreviewDialog();
+          }
+
+          // This function will allow us to hit enter from the address text box and go to web page entered.
+          private void ToolStripSpringTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+          {
+               if (e.KeyChar == (char)ConsoleKey.Enter)
+               {
+                    NavigateToPage();
+                    e.Handled = true;
+               }
+          }
+
+          // Automatically adds items to history database as sites are visited.
+          private void AddHistoryItem()
+          {
+               var thisPage = GetCurrentBrowser();
+               var newItem = new HistoryItem
+               {
+                    Date = DateTime.Now,
+                    Title = thisPage.DocumentTitle,
+                    Url = urlTextBox.Text
+               };
+               HistoryManager.AddHistoryItem(newItem);
+          }
+
+          // Will direct the user to desired web page and handles cases that may cause a failure to navigate.
+          private void NavigateToPage()
+          {
+               if (string.IsNullOrEmpty(urlTextBox.Text) || urlTextBox.Text.Equals("about:blank"))
+               {
+                    MessageBox.Show("Invalid Address");
+                    urlTextBox.Focus();
+                    return;
+               }
+
+               if (!urlTextBox.Text.StartsWith("http://") && !urlTextBox.Text.StartsWith("https://"))
+               {
+                    urlTextBox.Text = "http://" + urlTextBox.Text;
+               }
+
+               try
+               {
+                    var thisPage = GetCurrentBrowser();
+                    var thisTab = windowTabs.SelectedTab;
+                    _webList.Add(thisPage);
+                    _tabList.Add(thisTab);
+                    thisPage.Navigate(urlTextBox.Text);
+                    AddHistoryItem();
+                   
+                    var newEvent = new WebBrowserNavigatedEventArgs(thisPage.Url);
+                    if (thisPage.Navigated == true)
+                    {
+                         urlTextBox.Text = thisPage.Url.ToString();
+                    }
+               }
+               catch (System.UriFormatException)
+               {
+                    return;
+               }
           }
      }
 }
